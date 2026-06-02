@@ -79,7 +79,10 @@ input {
 }
 
 .brand {
-  font-size: 1.25rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--muted);
 }
 
 .site-nav,
@@ -92,7 +95,7 @@ nav {
   justify-content: space-between;
   gap: 1.5rem;
   padding: 1.25rem 4rem;
-  background: rgba(252, 251, 247, 0.88);
+  background: rgba(229, 214, 197, 0.88);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
 }
@@ -410,6 +413,21 @@ nav {
   border-bottom: 1px solid var(--line);
 }
 
+.story-image {
+  width: 100%;
+  max-width: 120px; /* Reduced further to make it very small and minimalist */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  display: block;
+  margin: 0 0 0 auto; /* Align to the right side of the column */
+  transition: transform 0.3s ease;
+}
+
+.story-image:hover {
+  transform: scale(1.02);
+}
+
 .story-copy h2,
 .section-heading h2,
 .featured-copy h2,
@@ -539,7 +557,9 @@ nav {
   margin-top: 1.25rem;
   max-width: 45ch;
 }
-
+.nav-links{
+  background: rgba(0, 0, 0, 0);
+}
 .spec-list {
   margin: 1.8rem 0;
   display: grid;
@@ -840,6 +860,14 @@ nav {
   font-family: 'Cormorant Garamond', serif;
 }
 
+.pdrn-body {
+  align-self: end;
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  padding-bottom: 1.5rem; /* Aligns perfectly next to the card's bottom text level */
+}
+
 .pdrn-stat {
   display: flex;
   flex-direction: column;
@@ -900,6 +928,14 @@ nav {
   font-weight: 400;
 }
 
+.pdrn-lead {
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: var(--muted);
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+
 .pdrn-divider {
   height: 1px;
   background: var(--line);
@@ -915,7 +951,6 @@ nav {
 
 .results-section {
   padding: 4rem 0;
-  border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
@@ -1106,96 +1141,98 @@ nav {
 
 /* ── Benefits Section ────────────────────────────────────────────────── */
 .benefits-section {
-  padding: 5rem 0;
-  border-top: 1px solid var(--line);
+  padding: 4rem 0;
+  background: #14110e;
+  color: #fff;
 }
 
 .benefits-header {
-  margin-bottom: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.benefits-header .eyebrow {
+  color: var(--gold);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
 }
 
 .benefits-header h2 {
-  margin-top: 0.75rem;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(2rem, 3vw, 2.8rem);
   font-weight: 300;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
+  line-height: 1.1;
+  color: #fbfaf8;
 }
 
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
+  gap: 0;
+  background: transparent;
+  width: 100%;
+  border-top: 1px solid rgba(200, 169, 110, 0.15);
 }
 
 .benefit-card {
-  background: rgba(255, 255, 255, 0.62);
-  padding: 2rem 1.8rem;
+  background: transparent;
+  padding: 2rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  transition: background 0.25s ease;
+  gap: 1.5rem;
+  border-right: 1px solid rgba(200, 169, 110, 0.15);
+  border-bottom: 1px solid rgba(200, 169, 110, 0.15);
   position: relative;
-  overflow: hidden;
+  transition: background 0.3s ease;
 }
 
-.benefit-card::after {
-  content: '';
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(200, 169, 110, 0.06) 0%, transparent 70%);
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+.benefit-card:nth-child(3n) {
+  border-right: none;
 }
 
 .benefit-card:hover {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.02);
 }
 
-.benefit-card:hover::after {
-  opacity: 2;
+.benefit-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.benefit-meta {
+.benefit-symbol-box {
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  border: 1px solid rgba(200, 169, 110, 0.4);
+  color: var(--gold);
+  font-size: 0.9rem;
 }
 
 .benefit-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.2rem;
+  font-size: 4rem;
   font-weight: 300;
-  color: var(--gold);
-  line-height: 1;
-  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.06);
+  line-height: 0.8;
 }
 
-.benefit-symbol {
-  font-size: 1.05rem;
-  color: var(--gold);
-  opacity: 0.65;
-}
-
-.benefit-card h3 {
-  font-size: 0.96rem;
+.benefit-content h3 {
+  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: var(--ink);
-  margin-top: 0.25rem;
+  color: #fbfaf8;
+  margin-bottom: 0.5rem;
 }
 
-.benefit-card p {
+.benefit-content p {
   font-size: 0.875rem;
-  color: var(--muted);
-  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.8;
 }
 
 /* ── Reviews Section ─────────────────────────────────────────────────── */
@@ -1298,4 +1335,37 @@ nav {
 .story-copy h2 {
   max-width: none;
   line-height: 1.15;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.65);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.live-dot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #10b981;
+  border-radius: 50%;
+  animation: pulse-ring 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 }

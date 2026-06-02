@@ -2,25 +2,16 @@
   <a routerLink="/" class="brand">REJ<span class="brand-u">U</span>VN</a>
 
   <ul class="nav-links">
+    <li><a href="#top">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#ingredients">Ingredients</a></li>
     <li><a routerLink="/privacy">Policy</a></li>
   </ul>
 
-  <a routerLink="/out-of-stock" class="nav-cta">Notify me</a>
+  <a routerLink="/out-of-stock" class="nav-cta">Shop now — 34,90 €</a>
 </nav>
 
-<section class="hero hero-image" id="top">
-  <div class="hero-banner">
-    <a href="#footer" class="hero-image-link">
-      <img
-        src="/rejuvn-product-hero.svg"
-        alt="REJUVN PDRN Cream product image"
-        class="hero-product-image"
-      />
-    </a>
-  </div>
-</section>
+
 
 <main class="page-shell">
   <section class="featured-section" id="featured">
@@ -72,8 +63,8 @@
       </div>
 
       <div class="hero-actions">
-        <a routerLink="/out-of-stock" class="btn-primary">Shop now</a>
-        
+        <a routerLink="/out-of-stock" class="btn-primary">Shop now — 34,90 €</a>
+
       </div>
     </div>
   </section>
@@ -82,16 +73,23 @@
     <div class="pdrn-header">
       <p class="eyebrow">PDRN Science</p>
       <h2>Cos'è il PDRN e come agisce sulla tua pelle</h2>
-      <div class="pdrn-stat">
-        <span class="stat-number">>97%</span>
-        <span class="stat-label">Similitudine biologica col DNA umano</span>
+      <div class="pdrn-card" style="position: relative; margin-bottom: 2rem; overflow: visible !important; background: linear-gradient(to left, rgba(200, 169, 110, 0.16) 0%, rgba(252, 251, 247, 0.96) 100%) !important;">
+        <p class="lead" style="margin: 0; padding-bottom: 2rem;">
+          Il PDRN (Polideossiribonucleotide) è una molecola biologica estratta dal DNA del salmone selvatico, la cui struttura è straordinariamente compatibile con il DNA umano.
+        </p>
+        <div class="pdrn-stat" style="position: absolute; bottom: -29px; right: 0px; margin-top: 0; background: var(--paper); border: 1px solid var(--line); padding: 0 1.4rem 0.3rem; border-radius: 40px; box-shadow: var(--shadow); display: flex; flex-direction: row; align-items: flex-end; gap: 0.60rem; z-index: 2; min-height: 52px; overflow: visible;">
+          <span class="stat-number" style="font-size: 4.6rem; line-height: 0.68; margin: 0; color: var(--gold); font-weight: 300; font-family: 'Cormorant Garamond', serif; display: inline-block; transform: translateY(-8px); transform-origin: bottom;">>97%</span>
+          <span class="stat-label" style="font-size: 0.6rem; letter-spacing: 0.05em; max-width: 12ch; text-align: left; line-height: 1.2; text-transform: uppercase; margin-bottom: 0.45rem; color: #1a1613; padding-top: 4px; font-weight: 500;">Similitudine biologica con il DNA umano</span>
+        </div>
       </div>
     </div>
-    <div class="pdrn-body">
-      <div class="pdrn-card">
-        <p class="lead">
-         Il PDRN (Polideossiribonucleotide) è una molecola biologica estratta dal DNA del salmone selvatico, la cui struttura è straordinariamente compatibile con il DNA umano
-      </div>
+    <div class="pdrn-body" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+      <img
+        src="/test2.jpg"
+        alt="REJUVN PDRN Science details"
+        class="story-image"
+        style="margin: 0; max-width: 360px; width: 100%;"
+      />
     </div>
   </section>
 
@@ -132,49 +130,33 @@
       </div>
     </div>
   </section>
+</main>
 
-  <section class="story-strip" id="about">
-    <div class="story-copy">
-      <p class="eyebrow">About</p>
-      <h2>Repairing Regenerating Deeply hydrating</h2>
-      <p>
-        REJUVN PDRN Cream delivers visible anti-aging benefits with every use. It helps improve skin
-        barrier function, enhance elasticity, and visibly reduce fine lines and wrinkles — so your
-        skin looks and feels noticeably younger over time.
-      </p>
-      <p style="margin-top: 1rem;">
-        The texture is light, fast-absorbing, and non-greasy — designed for daily use morning and
-        evening, and fully compatible with sensitive skin.
-      </p>
-      <blockquote class="about-quote">
-        REJUVN è una crema al PDRN di nuova generazione, sviluppata in Korea con tecnologia
-        estrattiva brevettata dal DNA del salmone selvaggio. Ripristina, rimpolpa, trasforma.
-      </blockquote>
-    </div>
-
-    <div class="story-cards">
-      @for (principle of principles; track principle) {
-        <div class="story-chip">{{ principle }}</div>
-      }
-    </div>
-  </section>
-
-  <section class="benefits-section" id="benefits">
+<section class="benefits-section" id="benefits">
     <div class="benefits-header">
-      <p class="eyebrow">Benefici</p>
-      <h2>Sei ragioni per scegliere REJUVN</h2>
+      <p class="eyebrow">— BENEFICI CLINICI</p>
+      <h2>Sei ragioni per cui la pelle ti<br> ringrazierà</h2>
     </div>
     <div class="benefits-grid">
       @for (benefit of benefits; track benefit.num) {
         <div class="benefit-card">
-          <div class="benefit-meta">
+          <div class="benefit-top">
+            <span class="benefit-symbol-box">{{ benefit.symbol }}</span>
             <span class="benefit-num">{{ benefit.num }}</span>
-            <span class="benefit-symbol">{{ benefit.symbol }}</span>
           </div>
-          <h3>{{ benefit.title }}</h3>
-          <p>{{ benefit.desc }}</p>
+          <div class="benefit-content">
+            <h3>{{ benefit.title }}</h3>
+            <p>{{ benefit.desc }}</p>
+          </div>
         </div>
       }
+    </div>
+  </section>
+
+<main class="page-shell">
+  <section class="story-strip" id="about">
+    <div class="story-copy">
+      <p class="eyebrow">About Us</p>
     </div>
   </section>
 
@@ -207,6 +189,6 @@
   <div class="footer-links">
     <a href="#ingredients">Ingredients</a>
     <a routerLink="/privacy">Privacy</a>
-    <a routerLink="/out-of-stock">Notify me</a>
+    <a routerLink="/out-of-stock">Shop now</a>
   </div>
 </footer>

@@ -40,27 +40,46 @@ export class RejuvnStoreService {
     localStorage.setItem(REJUVN_WAITLIST_KEY, JSON.stringify(list));
   }
 
-  addWaitlistEmail(email: string, source = 'waitlist'): boolean {
-    const list = this.getWaitlist();
+  async addWaitlistEmail(email: string, quantity = 1, source = 'waitlist'): Promise<boolean> {
     const normalizedEmail = email.trim().toLowerCase();
 
     if (!normalizedEmail) {
       return false;
     }
 
-    const alreadyExists = list.some((entry) => entry.email.toLowerCase() === normalizedEmail);
-    if (alreadyExists) {
-      return false;
+    // Attempt to save to backend API
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: normalizedEmail, quantity }),
+      });
+
+      if (!response.ok) {
+        console.error('Failed to save to backend waitlist API:', await response.text());
+      }
+    } catch (err) {
+      console.error('Error calling waitlist API:', err);
     }
 
-    list.push({
-      id: `e_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      email: email.trim(),
-      date: new Date().toISOString(),
-      source
-    });
+    // Save to local storage for local persistence
+    if (this.isBrowser) {
+      const list = this.getWaitlist();
+      const alreadyExists = list.some((entry) => entry.email.toLowerCase() === normalizedEmail);
+      if (!alreadyExists) {
+        list.push({
+          id: `e_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+          email: email.trim(),
+          date: new Date().toISOString(),
+          source: `${source}-qty-${quantity}`
+        });
+        this.saveWaitlist(list);
+      }
+    }
 
-    this.saveWaitlist(list);
     return true;
   }
+
 }

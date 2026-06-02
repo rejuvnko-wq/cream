@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "builds": [
+    {
+      "src": "dist/cream/server/server.mjs",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "dist/cream/browser/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "dist/cream/server/server.mjs"
+    },
+    {
+      "src": "/_next/(.*)",
+      "dest": "dist/cream/browser/$1"
+    },
+    {
+      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|svg|woff|woff2|ttf|eot|map))",
+      "dest": "dist/cream/browser/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dist/cream/server/server.mjs"
+    }
+  ]
+}
