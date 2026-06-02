@@ -87,7 +87,20 @@ export class OutOfStockPageComponent implements OnInit {
         this.alreadyRegistered.set(true);
       } else if (response.ok) {
         // Also save to local storage
-        await this.store.addWaitlistEmail(this.email, this.quantity, 'waitlist');
+        if (isPlatformBrowser(this.platformId)) {
+          const list = this.store.getWaitlist();
+          const normalizedEmail = this.email.trim().toLowerCase();
+          const alreadyExists = list.some((entry) => entry.email.toLowerCase() === normalizedEmail);
+          if (!alreadyExists) {
+            list.push({
+              id: `e_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+              email: this.email.trim(),
+              date: new Date().toISOString(),
+              source: `waitlist-qty-${this.quantity}`
+            });
+            this.store.saveWaitlist(list);
+          }
+        }
         this.showSuccess = true;
         this.fetchWaitlistCount();
       }

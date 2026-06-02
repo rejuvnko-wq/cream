@@ -140,7 +140,7 @@ app.get('/api/waitlist/count', async (req, res) => {
   try {
     const supabaseUrl = process.env['SUPABASE_URL'];
     const supabaseKey = process.env['SUPABASE_KEY'];
-    let dbCount = 0;
+    let count = 0;
 
     if (supabaseUrl && supabaseKey) {
       try {
@@ -157,18 +157,17 @@ app.get('/api/waitlist/count', async (req, res) => {
           if (rangeHeader) {
             const match = rangeHeader.match(/\/(\d+)/);
             if (match) {
-              dbCount = parseInt(match[1], 10);
+              count = parseInt(match[1], 10);
             }
           }
         }
       } catch (dbErr) {
-        console.error('Failed to get count from Supabase, checking local file...', dbErr);
+        console.error('Failed to get count from Supabase:', dbErr);
       }
+    } else {
+      count = await getLocalCount();
     }
 
-    const localCount = await getLocalCount();
-    // Base waitlist number of 0 + actual entries
-    const count = dbCount + localCount;
     res.status(200).json({ count });
   } catch (err) {
     res.status(200).json({ count: 0 });
@@ -176,6 +175,27 @@ app.get('/api/waitlist/count', async (req, res) => {
 });
 
 async function isEmailAlreadyRegistered(email: string): Promise<boolean> {
+  const supabaseUrl = process.env['SUPABASE_URL'];
+  const supabaseKey = process.env['SUPABASE_KEY'];
+
+  if (supabaseUrl && supabaseKey) {
+    try {
+      const response = await fetch(`${supabaseUrl.replace(/\/$/, '')}/rest/v1/waitlist?email=eq.${encodeURIComponent(email)}`, {
+        method: 'GET',
+        headers: {
+          'apikey': supabaseKey,
+          'Authorization': `Bearer ${supabaseKey}`
+        }
+      });
+      if (response.ok) {
+        const list = await response.json();
+        return Array.isArray(list) && list.length > 0;
+      }
+    } catch (err) {
+      console.error('Failed to check duplicates in Supabase, falling back to local check:', err);
+    }
+  }
+
   try {
     const filePath = join(process.cwd(), 'waitlist.json');
     const data = await fs.readFile(filePath, 'utf-8');
