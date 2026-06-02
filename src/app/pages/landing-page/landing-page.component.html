@@ -1,0 +1,212 @@
+<nav class="site-nav">
+  <a routerLink="/" class="brand">REJ<span class="brand-u">U</span>VN</a>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#ingredients">Ingredients</a></li>
+    <li><a routerLink="/privacy">Policy</a></li>
+  </ul>
+
+  <a routerLink="/out-of-stock" class="nav-cta">Notify me</a>
+</nav>
+
+<section class="hero hero-image" id="top">
+  <div class="hero-banner">
+    <a href="#footer" class="hero-image-link">
+      <img
+        src="/rejuvn-product-hero.svg"
+        alt="REJUVN PDRN Cream product image"
+        class="hero-product-image"
+      />
+    </a>
+  </div>
+</section>
+
+<main class="page-shell">
+  <section class="featured-section" id="featured">
+    <div class="featured-visual">
+      <div class="featured-frame">
+        <span class="featured-label">PDRN Cream</span>
+        <div class="featured-jar" aria-hidden="true">
+          <svg viewBox="0 0 280 330" width="100%" height="100%">
+            <rect x="34" y="108" width="212" height="184" rx="16" fill="#f4f0ea" stroke="#c8a96e" stroke-width="1.2" />
+            <rect x="22" y="78" width="236" height="42" rx="10" fill="#1a1410" stroke="#c8a96e" stroke-width="0.8" />
+            <rect x="22" y="78" width="236" height="14" rx="10" fill="#2c2420" />
+            <text x="140" y="162" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="24" fill="#1a1410" letter-spacing="7">
+              REJUVN
+            </text>
+            <text x="140" y="186" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" fill="#8a7b72" letter-spacing="3">
+              PDRN REGENERATIVE CREAM
+            </text>
+            <line x1="74" y1="204" x2="206" y2="204" stroke="#c8a96e" stroke-width="0.6" opacity="0.6" />
+            <text x="140" y="224" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7" fill="#8a7b72" letter-spacing="2">
+              LIGHTWEIGHT · 30 ML
+            </text>
+            <text x="140" y="240" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7" fill="#8a7b72" letter-spacing="2">
+              K-BEAUTY · DAILY CARE
+            </text>
+            <text x="140" y="100" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="12" fill="#c8a96e" letter-spacing="5">
+              REJUVN
+            </text>
+            <ellipse cx="140" cy="296" rx="96" ry="9" fill="#1a1410" opacity="0.08" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-copy">
+      <p class="eyebrow">Featured product</p>
+      <h2>REJUVN PDRN Cream</h2>
+      <p class="featured-text">
+        A repairing, regenerating, and deeply hydrating cream with visible anti-aging benefits. 
+        It helps improve skin barrier function, enhance elasticity, and visibly reduce fine lines and wrinkles.
+      </p>
+
+      <div class="spec-list">
+        @for (spec of featuredSpecs; track spec.key) {
+          <div class="spec-row">
+            <span>{{ spec.key }}</span>
+            <strong>{{ spec.value }}</strong>
+          </div>
+        }
+      </div>
+
+      <div class="hero-actions">
+        <a routerLink="/out-of-stock" class="btn-primary">Shop now</a>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="pdrn-section" id="pdrn">
+    <div class="pdrn-header">
+      <p class="eyebrow">PDRN Science</p>
+      <h2>Cos'è il PDRN e come agisce sulla tua pelle</h2>
+      <div class="pdrn-stat">
+        <span class="stat-number">>97%</span>
+        <span class="stat-label">Similitudine biologica col DNA umano</span>
+      </div>
+    </div>
+    <div class="pdrn-body">
+      <div class="pdrn-card">
+        <p class="lead">
+         Il PDRN (Polideossiribonucleotide) è una molecola biologica estratta dal DNA del salmone selvatico, la cui struttura è straordinariamente compatibile con il DNA umano
+      </div>
+    </div>
+  </section>
+
+  <section class="results-section" id="results">
+    <div class="results-grid">
+      <div class="result-card">
+        <span class="result-number">94%</span>
+        <p class="result-label">Riduzione rughe visibili in 4 settimane</p>
+      </div>
+      <div class="result-card">
+        <span class="result-number">3×</span>
+        <p class="result-label">Produzione di collagene aumentata</p>
+      </div>
+      <div class="result-card">
+        <span class="result-number">48h</span>
+        <p class="result-label">Idratazione prolungata certificata</p>
+      </div>
+      <div class="result-card">
+        <span class="result-number">12K+</span>
+        <p class="result-label">Clienti soddisfatti in Europa</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ingredients-section" id="ingredients">
+    <div class="ingredients-header">
+      <p class="eyebrow">Ingredients</p>
+      <h2>Concise actives, clean presentation.</h2>
+    </div>
+    <div class="ingredients-body">
+      <div class="ingredient-grid">
+        @for (ingredient of ingredients; track ingredient.title) {
+          <article class="ingredient-card">
+            <h3>{{ ingredient.title }}</h3>
+            <p>{{ ingredient.copy }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="story-strip" id="about">
+    <div class="story-copy">
+      <p class="eyebrow">About</p>
+      <h2>Repairing Regenerating Deeply hydrating</h2>
+      <p>
+        REJUVN PDRN Cream delivers visible anti-aging benefits with every use. It helps improve skin
+        barrier function, enhance elasticity, and visibly reduce fine lines and wrinkles — so your
+        skin looks and feels noticeably younger over time.
+      </p>
+      <p style="margin-top: 1rem;">
+        The texture is light, fast-absorbing, and non-greasy — designed for daily use morning and
+        evening, and fully compatible with sensitive skin.
+      </p>
+      <blockquote class="about-quote">
+        REJUVN è una crema al PDRN di nuova generazione, sviluppata in Korea con tecnologia
+        estrattiva brevettata dal DNA del salmone selvaggio. Ripristina, rimpolpa, trasforma.
+      </blockquote>
+    </div>
+
+    <div class="story-cards">
+      @for (principle of principles; track principle) {
+        <div class="story-chip">{{ principle }}</div>
+      }
+    </div>
+  </section>
+
+  <section class="benefits-section" id="benefits">
+    <div class="benefits-header">
+      <p class="eyebrow">Benefici</p>
+      <h2>Sei ragioni per scegliere REJUVN</h2>
+    </div>
+    <div class="benefits-grid">
+      @for (benefit of benefits; track benefit.num) {
+        <div class="benefit-card">
+          <div class="benefit-meta">
+            <span class="benefit-num">{{ benefit.num }}</span>
+            <span class="benefit-symbol">{{ benefit.symbol }}</span>
+          </div>
+          <h3>{{ benefit.title }}</h3>
+          <p>{{ benefit.desc }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="reviews-section" id="reviews">
+    <div class="reviews-header">
+      <p class="eyebrow">Recensioni</p>
+      <h2>What our customers say.</h2>
+    </div>
+    <div class="reviews-grid">
+      @for (review of reviews; track review.name) {
+        <article class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">{{ review.text }}</p>
+          <footer class="review-footer">
+            <span class="review-name">{{ review.name }}</span>
+            <span class="review-location">{{ review.location }}</span>
+          </footer>
+        </article>
+      }
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="footer">
+  <div>
+    <a routerLink="/" class="brand footer-brand">REJ<span class="brand-u">U</span>VN</a>
+    <p class="footer-copy">Clean Korean skincare with a quiet, minimal design language.</p>
+  </div>
+
+  <div class="footer-links">
+    <a href="#ingredients">Ingredients</a>
+    <a routerLink="/privacy">Privacy</a>
+    <a routerLink="/out-of-stock">Notify me</a>
+  </div>
+</footer>

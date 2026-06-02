@@ -1,0 +1,85 @@
+<nav class="site-nav">
+  <a routerLink="/" class="brand">REJ<span class="brand-u">U</span>VN</a>
+  <a routerLink="/" class="nav-link">Back to home</a>
+</nav>
+
+<main class="page-shell notify-page">
+  <section class="notify-layout">
+    <div class="notify-visual">
+      <div class="notify-card">
+        <span class="card-eyebrow">Temporarily unavailable</span>
+        <h1>REJUVN PDRN Cream</h1>
+        <p>A repairing, regenerating, and deeply hydrating cream with visible anti-aging benefits.</p>
+
+        <div class="jar-art jar-art--small" aria-hidden="true">
+          <svg viewBox="0 0 280 330" width="100%" height="100%">
+            <rect x="35" y="108" width="210" height="185" rx="14" fill="#f4f0ea" stroke="#c8a96e" stroke-width="1.2" />
+            <rect x="24" y="78" width="232" height="42" rx="9" fill="#1a1410" stroke="#c8a96e" stroke-width="0.8" />
+            <rect x="24" y="78" width="232" height="14" rx="9" fill="#2c2420" />
+            <text x="140" y="165" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="24" font-weight="300" fill="#1a1410" letter-spacing="7">
+              REJUVN
+            </text>
+            <text x="140" y="190" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" fill="#8a7b72" letter-spacing="3">
+              PDRN REGENERATIVE CREAM
+            </text>
+            <line x1="75" y1="206" x2="205" y2="206" stroke="#c8a96e" stroke-width="0.6" opacity="0.6" />
+            <text x="140" y="224" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7.5" fill="#8a7b72" letter-spacing="2.5">
+              SOFT FINISH · 30 ML
+            </text>
+            <text x="140" y="242" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7" fill="#8a7b72" letter-spacing="2">
+              K-BEAUTY BIOTECHNOLOGY
+            </text>
+            <ellipse cx="140" cy="295" rx="96" ry="9" fill="#1a1410" opacity="0.07" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="notify-copy">
+      <p class="eyebrow">Notify me</p>
+      <h2>Be the first to know when it is back.</h2>
+      <p class="lead">
+        Leave your email and we’ll send a single update when the cream returns. No noise, no clutter,
+        just a simple restock alert.
+      </p>
+      <div class ="notify-stats">
+        <p id="ppl_waiting">1,234</p>
+        <p>people on the waitlist</p>
+      </div>
+
+      <form class="notify-form" (ngSubmit)="submitWaitlist()">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          placeholder="you@example.com"
+          [(ngModel)]="email"
+          [class.input-invalid]="emailTouched && !isEmailValid"
+        />
+
+        <button class="btn-primary" type="submit">Notify me</button>
+      </form>
+
+      <div class="success-panel" [class.visible]="showSuccess">
+        <strong>You're in.</strong>
+        <p>We’ll email you once the product is available again.</p>
+      </div>
+
+      
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer site-footer--dark">
+  <div>
+    <a routerLink="/" class="brand footer-brand">REJ<span class="brand-u">U</span>VN</a>
+    <p class="footer-copy">Minimal K-beauty care for everyday routines.</p>
+  </div>
+
+  <div class="footer-links">
+    <a routerLink="/privacy">Privacy</a>
+    <a href="#top">Top</a>
+  </div>
+</footer>
