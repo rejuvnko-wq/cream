@@ -1,194 +1,334 @@
-<nav class="site-nav">
-  <a routerLink="/" class="brand">REJ<span class="brand-u">U</span>VN</a>
-
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">REJUV<span>N</span></a>
   <ul class="nav-links">
-    <li><a href="#top">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#ingredients">Ingredients</a></li>
-    <li><a routerLink="/privacy">Policy</a></li>
+    <li><a href="#prodotto">Product</a></li>
+    <li><a href="#ingredienti">Ingredients</a></li>
+    <li><a href="#scienza">Science</a></li>
   </ul>
-
-  <a routerLink="/out-of-stock" class="nav-cta">Shop now — 34,90 €</a>
+  <button class="nav-cta" (click)="scrollToProduct()">Shop now — €34.90</button>
+  <button class="nav-hamburger" [class.open]="isMobileMenuOpen" (click)="toggleMobileMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
+<!-- MOBILE MENU OVERLAY -->
+<div class="nav-mobile-menu" [class.open]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+  <a href="#prodotto" (click)="toggleMobileMenu()">Product</a>
+  <a href="#ingredienti" (click)="toggleMobileMenu()">Ingredients</a>
+  <a href="#scienza" (click)="toggleMobileMenu()">Science</a>
+  <button class="nav-mobile-cta" (click)="scrollToProduct(); toggleMobileMenu()">Shop now — €34.90</button>
+</div>
 
-
-<main class="page-shell">
-  <section class="featured-section" id="featured">
-    <div class="featured-visual">
-      <div class="featured-frame">
-        <span class="featured-label">PDRN Cream</span>
-        <div class="featured-jar" aria-hidden="true">
-          <svg viewBox="0 0 280 330" width="100%" height="100%">
-            <rect x="34" y="108" width="212" height="184" rx="16" fill="#f4f0ea" stroke="#c8a96e" stroke-width="1.2" />
-            <rect x="22" y="78" width="236" height="42" rx="10" fill="#1a1410" stroke="#c8a96e" stroke-width="0.8" />
-            <rect x="22" y="78" width="236" height="14" rx="10" fill="#2c2420" />
-            <text x="140" y="162" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="24" fill="#1a1410" letter-spacing="7">
-              REJUVN
-            </text>
-            <text x="140" y="186" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" fill="#8a7b72" letter-spacing="3">
-              PDRN REGENERATIVE CREAM
-            </text>
-            <line x1="74" y1="204" x2="206" y2="204" stroke="#c8a96e" stroke-width="0.6" opacity="0.6" />
-            <text x="140" y="224" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7" fill="#8a7b72" letter-spacing="2">
-              LIGHTWEIGHT · 30 ML
-            </text>
-            <text x="140" y="240" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7" fill="#8a7b72" letter-spacing="2">
-              K-BEAUTY · DAILY CARE
-            </text>
-            <text x="140" y="100" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="12" fill="#c8a96e" letter-spacing="5">
-              REJUVN
-            </text>
-            <ellipse cx="140" cy="296" rx="96" ry="9" fill="#1a1410" opacity="0.08" />
-          </svg>
-        </div>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <div class="hero-kicker">Biotecnologia coreana · PDRN Complex</div>
+    <h1>La pelle che<br>si <em>rinnova</em>,<br>giorno dopo giorno.</h1>
+    <p class="hero-sub">La prima crema a base di PDRN formulata per rigenerare le cellule in profondità, idratare durevolmente e restituire alla pelle la sua luminosità naturale.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" (click)="scrollToProduct()">Acquista ora</button>
+      <div class="hero-price">
+        34,90€
+        <small>30 ml · Spedizione inclusa</small>
       </div>
     </div>
-
-    <div class="featured-copy">
-      <p class="eyebrow">Featured product</p>
-      <h2>REJUVN PDRN Cream</h2>
-      <p class="featured-text">
-        A repairing, regenerating, and deeply hydrating cream with visible anti-aging benefits. 
-        It helps improve skin barrier function, enhance elasticity, and visibly reduce fine lines and wrinkles.
-      </p>
-
-      <div class="spec-list">
-        @for (spec of featuredSpecs; track spec.key) {
-          <div class="spec-row">
-            <span>{{ spec.key }}</span>
-            <strong>{{ spec.value }}</strong>
-          </div>
-        }
-      </div>
-
-      <div class="hero-actions">
-        <a routerLink="/out-of-stock" class="btn-primary">Shop now — 34,90 €</a>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="pdrn-section" id="pdrn">
-    <div class="pdrn-header">
-      <p class="eyebrow">PDRN Science</p>
-      <h2>Cos'è il PDRN e come agisce sulla tua pelle</h2>
-      <div class="pdrn-card" style="position: relative; margin-bottom: 2rem; overflow: visible !important; background: linear-gradient(to left, rgba(200, 169, 110, 0.16) 0%, rgba(252, 251, 247, 0.96) 100%) !important;">
-        <p class="lead" style="margin: 0; padding-bottom: 2rem;">
-          Il PDRN (Polideossiribonucleotide) è una molecola biologica estratta dal DNA del salmone selvatico, la cui struttura è straordinariamente compatibile con il DNA umano.
-        </p>
-        <div class="pdrn-stat" style="position: absolute; bottom: -29px; right: 0px; margin-top: 0; background: var(--paper); border: 1px solid var(--line); padding: 0 1.4rem 0.3rem; border-radius: 40px; box-shadow: var(--shadow); display: flex; flex-direction: row; align-items: flex-end; gap: 0.60rem; z-index: 2; min-height: 52px; overflow: visible;">
-          <span class="stat-number" style="font-size: 4.6rem; line-height: 0.68; margin: 0; color: var(--gold); font-weight: 300; font-family: 'Cormorant Garamond', serif; display: inline-block; transform: translateY(-8px); transform-origin: bottom;">>97%</span>
-          <span class="stat-label" style="font-size: 0.6rem; letter-spacing: 0.05em; max-width: 12ch; text-align: left; line-height: 1.2; text-transform: uppercase; margin-bottom: 0.45rem; color: #1a1613; padding-top: 4px; font-weight: 500;">Similitudine biologica con il DNA umano</span>
-        </div>
-      </div>
-    </div>
-    <div class="pdrn-body" style="display: flex; justify-content: center; align-items: center; width: 100%;">
-      <img
-        src="/test2.jpg"
-        alt="REJUVN PDRN Science details"
-        class="story-image"
-        style="margin: 0; max-width: 360px; width: 100%;"
-      />
-    </div>
-  </section>
-
-  <section class="results-section" id="results">
-    <div class="results-grid">
-      <div class="result-card">
-        <span class="result-number">94%</span>
-        <p class="result-label">Riduzione rughe visibili in 4 settimane</p>
-      </div>
-      <div class="result-card">
-        <span class="result-number">3×</span>
-        <p class="result-label">Produzione di collagene aumentata</p>
-      </div>
-      <div class="result-card">
-        <span class="result-number">48h</span>
-        <p class="result-label">Idratazione prolungata certificata</p>
-      </div>
-      <div class="result-card">
-        <span class="result-number">12K+</span>
-        <p class="result-label">Clienti soddisfatti in Europa</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="ingredients-section" id="ingredients">
-    <div class="ingredients-header">
-      <p class="eyebrow">Ingredients</p>
-      <h2>Concise actives, clean presentation.</h2>
-    </div>
-    <div class="ingredients-body">
-      <div class="ingredient-grid">
-        @for (ingredient of ingredients; track ingredient.title) {
-          <article class="ingredient-card">
-            <h3>{{ ingredient.title }}</h3>
-            <p>{{ ingredient.copy }}</p>
-          </article>
-        }
-      </div>
-    </div>
-  </section>
-</main>
-
-<section class="benefits-section" id="benefits">
-    <div class="benefits-header">
-      <p class="eyebrow">— BENEFICI CLINICI</p>
-      <h2>Sei ragioni per cui la pelle ti<br> ringrazierà</h2>
-    </div>
-    <div class="benefits-grid">
-      @for (benefit of benefits; track benefit.num) {
-        <div class="benefit-card">
-          <div class="benefit-top">
-            <span class="benefit-symbol-box">{{ benefit.symbol }}</span>
-            <span class="benefit-num">{{ benefit.num }}</span>
-          </div>
-          <div class="benefit-content">
-            <h3>{{ benefit.title }}</h3>
-            <p>{{ benefit.desc }}</p>
-          </div>
-        </div>
-      }
-    </div>
-  </section>
-
-<main class="page-shell">
-  <section class="story-strip" id="about">
-    <div class="story-copy">
-      <p class="eyebrow">About Us</p>
-    </div>
-  </section>
-
-  <section class="reviews-section" id="reviews">
-    <div class="reviews-header">
-      <p class="eyebrow">Recensioni</p>
-      <h2>What our customers say.</h2>
-    </div>
-    <div class="reviews-grid">
-      @for (review of reviews; track review.name) {
-        <article class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">{{ review.text }}</p>
-          <footer class="review-footer">
-            <span class="review-name">{{ review.name }}</span>
-            <span class="review-location">{{ review.location }}</span>
-          </footer>
-        </article>
-      }
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer" id="footer">
-  <div>
-    <a routerLink="/" class="brand footer-brand">REJ<span class="brand-u">U</span>VN</a>
-    <p class="footer-copy">Clean Korean skincare with a quiet, minimal design language.</p>
   </div>
-
-  <div class="footer-links">
-    <a href="#ingredients">Ingredients</a>
-    <a routerLink="/privacy">Privacy</a>
-    <a routerLink="/out-of-stock">Shop now</a>
+  <div class="hero-visual">
+    <div class="tube-wrap">
+      <svg class="tube-svg" viewBox="0 0 220 420" width="220" height="420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="tubeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#A3C9E2"/>
+            <stop offset="30%" style="stop-color:#E8F3FA"/>
+            <stop offset="60%" style="stop-color:#C8DFF0"/>
+            <stop offset="100%" style="stop-color:#7AAECB"/>
+          </linearGradient>
+          <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#D4956E"/>
+            <stop offset="100%" style="stop-color:#8A5038"/>
+          </linearGradient>
+          <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:white;stop-opacity:0"/>
+            <stop offset="50%" style="stop-color:white;stop-opacity:0.35"/>
+            <stop offset="100%" style="stop-color:white;stop-opacity:0"/>
+          </linearGradient>
+        </defs>
+        <!-- CAP -->
+        <rect x="65" y="20" width="90" height="55" rx="8" fill="url(#capGrad)"/>
+        <rect x="75" y="28" width="70" height="4" rx="2" fill="rgba(255,255,255,0.2)"/>
+        <!-- TUBE BODY -->
+        <rect x="40" y="72" width="140" height="300" rx="6" fill="url(#tubeGrad)"/>
+        <!-- SHIMMER -->
+        <rect x="40" y="72" width="140" height="300" rx="6" fill="url(#shimmer)"/>
+        <!-- LABEL AREA -->
+        <rect x="50" y="110" width="120" height="180" rx="3" fill="rgba(255,255,255,0.55)"/>
+        <!-- BRAND -->
+        <text x="110" y="148" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="18" font-weight="300" fill="#2C201A" letter-spacing="4">REJUVN</text>
+        <line x1="65" y1="155" x2="155" y2="155" stroke="#B87355" stroke-width="0.7" opacity="0.6"/>
+        <!-- Product name -->
+        <text x="110" y="175" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8" fill="#5C9EC0" letter-spacing="2">PDRN RENEWAL CREAM</text>
+        <!-- Circle deco -->
+        <circle cx="110" cy="213" r="28" fill="none" stroke="#C8DFF0" stroke-width="1"/>
+        <circle cx="110" cy="213" r="22" fill="rgba(200,223,240,0.25)"/>
+        <text x="110" y="208" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="9" fill="#5C9EC0" letter-spacing="1">PDRN</text>
+        <text x="110" y="221" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="6" fill="#A08878" letter-spacing="1">COMPLEX</text>
+        <!-- Bottom info -->
+        <text x="110" y="265" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7" fill="#A08878" letter-spacing="2">30 ml / 1.0 FL.OZ.</text>
+        <!-- Tube bottom (crimped) -->
+        <rect x="50" y="365" width="120" height="12" rx="3" fill="rgba(92,158,192,0.4)"/>
+        <rect x="55" y="373" width="110" height="5" rx="2" fill="rgba(92,158,192,0.3)"/>
+      </svg>
+    </div>
+    <div class="hero-badge">
+      <strong>30ml</strong>
+      <span>volume</span>
+    </div>
   </div>
+  <div class="scroll-cue">Scopri</div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-item">PDRN Polinucleotidi</div>
+  <div class="strip-item">Acido Ialuronico</div>
+  <div class="strip-item">Niacinamide</div>
+  <div class="strip-item">Dermatologicamente testata</div>
+  <div class="strip-item">Cruelty free</div>
+</div>
+
+<!-- PRODUCT DETAIL -->
+<section class="detail-section" id="prodotto">
+  <div class="detail-visual fade-in">
+    <svg viewBox="0 0 280 500" width="280" height="500" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="tubeGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#A3C9E2"/>
+          <stop offset="35%" style="stop-color:#E8F3FA"/>
+          <stop offset="65%" style="stop-color:#C8DFF0"/>
+          <stop offset="100%" style="stop-color:#7AAECB"/>
+        </linearGradient>
+        <linearGradient id="capGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#D4956E"/>
+          <stop offset="100%" style="stop-color:#8A5038"/>
+        </linearGradient>
+      </defs>
+      <rect x="85" y="22" width="110" height="65" rx="10" fill="url(#capGrad2)"/>
+      <rect x="97" y="33" width="86" height="5" rx="2.5" fill="rgba(255,255,255,0.25)"/>
+      <rect x="45" y="84" width="190" height="370" rx="8" fill="url(#tubeGrad2)"/>
+      <rect x="55" y="130" width="170" height="225" rx="4" fill="rgba(255,255,255,0.58)"/>
+      <text x="140" y="172" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="22" font-weight="300" fill="#2C201A" letter-spacing="5">REJUVN</text>
+      <line x1="75" y1="181" x2="205" y2="181" stroke="#B87355" stroke-width="0.8" opacity="0.6"/>
+      <text x="140" y="198" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" fill="#5C9EC0" letter-spacing="2.5">PDRN RENEWAL CREAM</text>
+      <circle cx="140" cy="252" r="35" fill="none" stroke="#C8DFF0" stroke-width="1.2"/>
+      <circle cx="140" cy="252" r="26" fill="rgba(200,223,240,0.3)"/>
+      <text x="140" y="247" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="11" fill="#5C9EC0" letter-spacing="1">PDRN</text>
+      <text x="140" y="261" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7" fill="#A08878" letter-spacing="1.5">COMPLEX</text>
+      <text x="140" y="322" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" fill="#A08878" letter-spacing="2.5">30 ml / 1.0 FL.OZ.</text>
+      <rect x="65" y="447" width="150" height="14" rx="4" fill="rgba(92,158,192,0.4)"/>
+      <rect x="72" y="458" width="136" height="6" rx="3" fill="rgba(92,158,192,0.3)"/>
+    </svg>
+    <div class="detail-badge-row">
+      <div class="badge">Vegan</div>
+      <div class="badge">Derma-testata</div>
+      <div class="badge">Cruelty Free</div>
+    </div>
+  </div>
+  <div class="detail-text fade-in">
+    <div class="section-label">Product sheet</div>
+    <h2>PDRN<br><em>Renewal Cream</em></h2>
+    <p style="font-size:0.95rem; color:var(--text-mid); line-height:1.9;">A face cream with a high concentration of biotech active ingredients, formulated according to the most advanced standards of Korean dermocosmetics. Its rich yet lightweight texture is ideal for all skin types.</p>
+    <div class="spec-table">
+      <div class="spec-row">
+        <span class="label">Main active ingredient</span>
+        <span class="value">PDRN Complex</span>
+      </div>
+      <div class="spec-row">
+        <span class="label">Co-active</span>
+        <span class="value">Hyaluronic Acid · Niacinamide 5%</span>
+      </div>
+      <div class="spec-row">
+        <span class="label">Format</span>
+        <span class="value">30 ml tube</span>
+      </div>
+      <div class="spec-row">
+        <span class="label">Skin type</span>
+        <span class="value">All types</span>
+      </div>
+      <div class="spec-row">
+        <span class="label">Application</span>
+        <span class="value">Morning and evening</span>
+      </div>
+      <div class="spec-row">
+        <span class="label">Price</span>
+        <span class="value" style="color:var(--terracotta); font-family:'Cormorant Garamond',serif; font-size:1.2rem;">€34.90</span>
+      </div>
+    </div>
+    <form (ngSubmit)="submitWaitlist()" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+      <div class="form-group" style="margin-bottom: 0;">
+        <label for="email" style="font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.35rem;">Email Address</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="you@example.com" [class.input-invalid]="emailTouched && !isEmailValid">
+      </div>
+
+      <!-- Quantity Selector & Price -->
+      <div class="form-group" style="margin-bottom: 0;">
+        <label style="font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.35rem;">Quantity (units)</label>
+        <div class="qty-container" style="margin: 0.25rem 0 0 0;">
+          <div class="qty-selector">
+            <button type="button" class="qty-btn" (click)="decQty()">-</button>
+            <span class="qty-divider"></span>
+            <input type="text" class="qty-input" [value]="quantity" readonly>
+            <span class="qty-divider"></span>
+            <button type="button" class="qty-btn" (click)="incQty()">+</button>
+          </div>
+          <div class="qty-price-label">
+            <span>Total Price:</span>
+            <strong>{{ (quantity * 34.90).toFixed(2).replace('.', ',') }} €</strong>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary" [disabled]="isSubmitting" style="margin-top: 0.5rem; width: 100%; text-align: center;">
+        {{ isSubmitting ? 'Joining...' : 'Add to cart' }}
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<section class="section" id="ingredienti">
+  <div class="fade-in">
+    <div class="section-label">Formula scientifica</div>
+    <h2>Tre ingredienti.<br><em>Infinite</em> trasformazioni.</h2>
+  </div>
+  <div class="ingredients-grid fade-in">
+    <div class="ingredient-card" data-num="01">
+      <div class="ingredient-icon">🧬</div>
+      <h3>PDRN</h3>
+      <div class="sub">Polinucleotidi · Bio-rigenerazione</div>
+      <p>I polinucleotidi stimolano i recettori A2A nelle cellule cutanee, attivando la sintesi del collagene e accelerando la rigenerazione cellulare. Estratto da fonti marine certificate, il PDRN agisce a livello del derma per un rinnovamento visibile fin dalle prime settimane.</p>
+    </div>
+    <div class="ingredient-card" data-num="02">
+      <div class="ingredient-icon">💧</div>
+      <h3>Acido Ialuronico</h3>
+      <div class="sub">Multi-peso molecolare · Idratazione</div>
+      <p>La nostra formula combina acido ialuronico a basso e alto peso molecolare per un'idratazione in superficie e in profondità. Trattiene fino a 1000 volte il suo peso in acqua, garantendo una pelle rimpolpata e visibilmente levigata per oltre 24 ore.</p>
+    </div>
+    <div class="ingredient-card" data-num="03">
+      <div class="ingredient-icon">✨</div>
+      <h3>Niacinamide</h3>
+      <div class="sub">Vitamina B3 · Uniformità del tono</div>
+      <p>La niacinamide al 5% riduce la produzione di melanina, uniforma le macchie cutanee e raffina i pori visibili. Agisce in sinergia con il PDRN per massimizzare la luminosità e rinforzare la barriera cutanea contro gli agenti esterni.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO / CELLS SECTION -->
+<section class="video-section" id="scienza">
+  <div class="video-text fade-in">
+    <div class="hero-kicker">La scienza del PDRN</div>
+    <h2>Come il PDRN<br><em>parla</em> alle tue cellule</h2>
+    <p>Il PDRN (Polideoxyribonucleotide) è una molecola biocompatibile che interagisce direttamente con i recettori delle cellule cutanee, innescando una cascata di segnali rigenerativi.</p>
+    <p>La simulazione mostra come le molecole di PDRN si legano ai recettori A2A delle cellule, attivando la produzione di collagene e la rigenerazione del tessuto dermico.</p>
+  </div>
+  <div class="fade-in">
+    <div class="video-wrap">
+      <div class="cell-canvas">
+        <canvas id="cellCanvas" width="560" height="315"></canvas>
+      </div>
+    </div>
+    <div class="video-caption">Simulazione didattica — interazione PDRN ↔ recettori A2A</div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section fade-in" id="benefici">
+  <div class="section-label">Risultati clinicamente osservati</div>
+  <h2>La tua pelle,<br><em>ritrovata.</em></h2>
+  <div class="benefits-grid">
+    <div class="benefit-row">
+      <div class="benefit-num">01</div>
+      <div>
+        <h4>Rigenerazione Cellulare Profonda</h4>
+        <p>Il PDRN attiva la proliferazione dei fibroblasti, stimolando la produzione endogena di collagene e elastina per una pelle più densa e compatta.</p>
+      </div>
+    </div>
+    <div class="benefit-row">
+      <div class="benefit-num">02</div>
+      <div>
+        <h4>Idratazione a 72 ore</h4>
+        <p>La combinazione di acido ialuronico multi-molecolare forma un serbatoio idratante multistrato che garantisce una pelle rimpolpata anche nei giorni successivi all'applicazione.</p>
+      </div>
+    </div>
+    <div class="benefit-row">
+      <div class="benefit-num">03</div>
+      <div>
+        <h4>Luminosità Uniforme</h4>
+        <p>La niacinamide inibisce il trasferimento della melanina verso i cheratinociti, riducendo le discromie e restituendo un incarnato radioso e uniforme.</p>
+      </div>
+    </div>
+    <div class="benefit-row">
+      <div class="benefit-num">04</div>
+      <div>
+        <h4>Barriera Cutanea Rafforzata</h4>
+        <p>La sinergia tra i tre principi attivi consolida il film idrolipidico naturale della pelle, proteggendola dallo stress ambientale e dai segni del tempo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="hero-kicker" style="margin-bottom:1.5rem;">Edizione limitata · Lancio esclusivo</div>
+  <h2 style="color:var(--white); max-width:14ch; margin:0 auto 1rem;">Prendi cura della tua pelle, adesso.</h2>
+  <p>Disponibile in quantità limitate per i primi clienti.<br>Spedizione gratuita in tutta Italia.</p>
+  <div class="cta-price-block">
+    <span class="cta-price">34,90€</span>
+    <span class="cta-price-note">IVA inclusa · Spedizione gratuita · 30 ml</span>
+  </div>
+  <div class="cta-actions">
+    <button class="btn-white" (click)="scrollToProduct()">Acquista ora</button>
+    <button class="btn-outline" onclick="document.getElementById('scienza').scrollIntoView({behavior:'smooth'})">Scopri la scienza</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="nav-logo">REJUV<span>N</span></a>
+  <p>© 2026 REJUVN Beauty · PDRN Renewal Cream · Made with Korean Biotech</p>
+  <p style="font-size:0.7rem; color:var(--text-light);"><a routerLink="/privacy">Privacy Policy</a> · Questo sito è a scopo di test e analisi di mercato.</p>
 </footer>
+
+<!-- MODAL (OUT OF STOCK / WAITLIST MERGED) -->
+<div class="modal-overlay" [class.open]="isModalOpen" (click)="closeModal($event)">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <button class="modal-close" (click)="closeModal($event)">&times;</button>
+    
+    <div style="text-align: center;">
+      <!-- Queue Card -->
+      <div style="border: 1px solid rgba(184, 115, 85, 0.2); padding: 0.9rem 1.2rem; margin: 1rem auto 1.5rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 0.8rem; font-size: 0.85rem; background: var(--beige-warm); max-width: 320px;">
+        <span style="width: 6px; height: 6px; background-color: var(--terracotta); border-radius: 50%; display: inline-block; flex-shrink: 0;"></span>
+        <div style="font-family: var(--font-sans); line-height: 1;">
+          <strong style="color: var(--text-dark); font-weight: 600; font-size: 1rem; margin-right: 0.25rem;">{{ waitlistCount() }}</strong>
+          <span style="color: var(--text-mid);">persone in coda d'attesa</span>
+        </div>
+      </div>
+
+      @if (showSuccess) {
+        <div class="modal-success" class="visible">
+          <div class="check" style="background: var(--sky-light); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1rem;">✓</div>
+          <h3>Registrazione completata!</h3>
+          <p style="margin-top:0.5rem; font-size: 0.9rem; color: var(--text-mid);">Hai riservato con successo {{ quantity }} flacone/i di REJUVN PDRN Cream. Ti invieremo un'email non appena il tuo lotto sarà pronto per la spedizione.</p>
+        </div>
+      } @else if (alreadyRegistered()) {
+        <div>
+          <div class="check" style="background: #fff8e6; border: 1px solid rgba(184, 115, 85, 0.3); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--terracotta); margin: 0 auto 1rem;">!</div>
+          <h3>Già registrato!</h3>
+          <p style="margin-top:0.5rem; font-size: 0.9rem; color: var(--text-mid);">Questo indirizzo email è già presente nella nostra lista d'attesa. Ti avviseremo non appena il prodotto sarà disponibile.</p>
+        </div>
+      }
+    </div>
+  </div>
+</div>
