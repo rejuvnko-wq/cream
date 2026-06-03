@@ -68,47 +68,66 @@ nav {
 
 /* HERO */
 .hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding-top: 80px;
-  background: linear-gradient(135deg, var(--sky-light) 0%, var(--beige) 60%, var(--white) 100%);
   position: relative;
   overflow: hidden;
+  /* Break out of any max-width container */
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  /* Override global .hero display:grid */
+  display: block !important;
+  gap: unset !important;
+  min-height: unset !important;
 }
-.hero::before {
-  content: '';
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.hero-overlay {
   position: absolute;
-  top: -20%; right: -10%;
-  width: 60vw; height: 60vw;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(200,223,240,0.4) 0%, transparent 70%);
-  pointer-events: none;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(20, 12, 8, 0.72) 0%,
+    rgba(20, 12, 8, 0.45) 55%,
+    rgba(20, 12, 8, 0.05) 100%
+  );
+  z-index: 1;
 }
 .hero-text {
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 5rem 6rem 5rem 4rem;
-  position: relative; z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 5rem 4rem 7rem;
+  max-width: 650px;
 }
 .hero-kicker {
   font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--terracotta); margin-bottom: 1.5rem;
+  color: rgba(255,255,255,0.75); margin-bottom: 1.5rem;
   display: flex; align-items: center; gap: 0.8rem;
 }
 .hero-kicker::before {
-  content: ''; width: 2rem; height: 1px; background: var(--terracotta);
+  content: ''; width: 2rem; height: 1px; background: rgba(255,255,255,0.5);
 }
 h1 {
   font-family: var(--font-serif);
   font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 300;
   line-height: 1.1;
-  color: var(--text-dark);
+  color: #fff;
   margin-bottom: 1.5rem;
 }
-h1 em { color: var(--sky-deep); font-style: italic; }
+h1 em { color: var(--sky-mid); font-style: italic; }
 .hero-sub {
-  font-size: 1rem; color: var(--text-mid);
+  font-size: 1rem; color: rgba(255,255,255,0.75);
   max-width: 38ch; margin-bottom: 2.5rem;
   line-height: 1.8;
 }
@@ -129,23 +148,12 @@ h1 em { color: var(--sky-deep); font-style: italic; }
 }
 .hero-price {
   font-family: var(--font-serif);
-  font-size: 1.4rem; color: var(--text-dark);
+  font-size: 1.4rem; color: #fff;
 }
 .hero-price small {
   font-family: var(--font-sans);
-  font-size: 0.75rem; color: var(--text-light);
+  font-size: 0.75rem; color: rgba(255,255,255,0.6);
   display: block; letter-spacing: 0.1em;
-}
-.hero-visual {
-  display: flex; align-items: stretch; justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 .scroll-cue {
@@ -637,73 +645,44 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   font-family: var(--font-sans) !important;
 }
 
-/* ── RESPONSIVE: TABLET & MOBILE ── */
+/* ── RESPONSIVE BREAKPOINTS ── */
 @media (max-width: 900px) {
   nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
 
-  /* HERO — stack image on top, text below */
+  /* HERO */
   .hero {
-    grid-template-columns: 1fr;
-    grid-template-rows: 55vw auto;
-    min-height: auto;
-    padding-top: 64px;
-  }
-  .hero-visual {
-    grid-row: 1;
-    min-height: 55vw;
-    max-height: 55vw;
-    overflow: hidden;
-  }
-  .hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    min-height: 100vh;
   }
   .hero-text {
-    grid-row: 2;
-    padding: 2.5rem 1.5rem 2rem;
-    text-align: center;
-    align-items: center;
+    padding: 8rem 2rem 5rem 2rem;
+    text-align: left;
+    align-items: flex-start;
+    max-width: 100%;
   }
-  .hero-kicker { justify-content: center; }
-  .hero-sub { max-width: 100%; font-size: 0.92rem; }
-  .hero-actions { justify-content: center; flex-wrap: wrap; gap: 1rem; }
-  .scroll-cue { display: none; }
+  .hero-kicker { justify-content: flex-start; }
+  .hero-sub { max-width: 100%; }
+  .hero-actions { justify-content: flex-start; }
 
   /* STRIP */
   .strip {
-    gap: 1rem;
+    gap: 1.2rem;
     flex-wrap: wrap;
     padding: 0.8rem 1rem;
     justify-content: center;
   }
-  .strip-item { font-size: 0.65rem; }
 
   /* PRODUCT DETAIL */
   .detail-section {
     grid-template-columns: 1fr;
-    gap: 0;
-    padding: 0;
-  }
-  .detail-visual {
-    order: 1;
-    width: 100%;
-  }
-  .detail-visual .detail-img {
-    width: 100%;
-    max-width: 100%;
-    height: 70vw;
-    border-radius: 0;
-    box-shadow: none;
-  }
-  .detail-text {
-    order: 2;
+    gap: 2rem;
     padding: 2rem 1.5rem;
   }
+  .detail-visual { order: 2; }
+  .detail-visual .detail-img { max-width: 380px; }
+  .detail-text { order: 1; }
 
   /* QUANTITY */
   .qty-container { gap: 1rem; }
@@ -714,10 +693,10 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   .ingredients-grid { grid-template-columns: 1fr; gap: 1px; }
   .ingredient-card { padding: 2rem 1.5rem; }
 
-  /* VIDEO / RESULTS */
-  .video-section { padding: 3rem 1.5rem; }
-  .results-grid { grid-template-columns: repeat(2, 1fr); }
-  .result-card { padding: 1.5rem 1rem; }
+  /* VIDEO */
+  .video-section {
+    padding: 3rem 1.5rem;
+  }
 
   /* BENEFITS */
   .benefits-section { padding: 3rem 1.5rem; }
@@ -742,26 +721,21 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   .modal { padding: 2rem 1.5rem; }
 }
 
-/* ── RESPONSIVE: SMALL PHONES ── */
 @media (max-width: 480px) {
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.75rem; margin-bottom: 1.5rem; }
-  .hero { grid-template-rows: 60vw auto; }
-  .hero-visual { min-height: 60vw; max-height: 60vw; }
-  .hero-text { padding: 2rem 1.2rem 1.5rem; }
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+  .hero-text { padding: 2rem 1.2rem 1rem; }
+  .hero-visual { padding: 1rem; }
   .btn-primary { padding: 0.9rem 1.8rem; font-size: 0.78rem; }
   .strip { gap: 0.8rem; }
-  .strip-item { font-size: 0.6rem; }
+  .strip-item { font-size: 0.62rem; }
   .section { padding: 2.5rem 1.2rem; }
   .benefits-section { padding: 2.5rem 1.2rem; }
+  .detail-section { padding: 2.5rem 1.2rem; }
   .cta-section { padding: 3rem 1.2rem; }
   footer { padding: 1.5rem 1.2rem; }
   .modal { padding: 1.5rem 1.2rem; }
   .qty-selector { height: 48px; }
   .qty-btn { width: 44px; height: 44px; font-size: 1.1rem; }
   .qty-input { width: 44px; font-size: 1.1rem; }
-  .result-card { padding: 1.2rem 0.8rem; }
-  .result-number { font-size: 2.4rem; }
-  .detail-visual .detail-img { height: 80vw; }
-  .detail-text { padding: 1.5rem 1.2rem; }
 }
