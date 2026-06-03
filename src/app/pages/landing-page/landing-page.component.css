@@ -710,7 +710,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   }
   .hero-text {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 0;
     transform: translateY(-50%);
     z-index: 2;
@@ -782,6 +782,14 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     font-size: 0.6rem;
     gap: 1.5rem;
   }
+  .scroll-cue {
+    bottom: 0.5rem;
+    font-size: 0.5rem;
+    gap: 0.15rem;
+  }
+  .scroll-cue::after {
+    font-size: 0.7rem;
+  }
 
   /* PRODUCT DETAIL */
   .detail-section {
@@ -848,6 +856,14 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   .strip-item {
     font-size: 0.55rem;
     gap: 1.2rem;
+  }
+  .scroll-cue {
+    font-size: 0.45rem;
+    bottom: 0.25rem;
+    gap: 0.1rem;
+  }
+  .scroll-cue::after {
+    font-size: 0.6rem;
   }
   .section { padding: 2.5rem 1.2rem; }
   .benefits-section { padding: 2.5rem 1.2rem; }
