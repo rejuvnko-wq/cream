@@ -637,47 +637,73 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   font-family: var(--font-sans) !important;
 }
 
-/* ── RESPONSIVE BREAKPOINTS ── */
+/* ── RESPONSIVE: TABLET & MOBILE ── */
 @media (max-width: 900px) {
   nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
 
-  /* HERO */
+  /* HERO — stack image on top, text below */
   .hero {
     grid-template-columns: 1fr;
+    grid-template-rows: 55vw auto;
     min-height: auto;
-    padding-top: 70px;
+    padding-top: 64px;
+  }
+  .hero-visual {
+    grid-row: 1;
+    min-height: 55vw;
+    max-height: 55vw;
+    overflow: hidden;
+  }
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
   }
   .hero-text {
-    padding: 2.5rem 1.5rem 1.5rem;
+    grid-row: 2;
+    padding: 2.5rem 1.5rem 2rem;
     text-align: center;
     align-items: center;
   }
   .hero-kicker { justify-content: center; }
-  .hero-sub { max-width: 100%; }
-  .hero-actions { justify-content: center; }
-  .hero-visual { min-height: 320px; max-height: 400px; }
-  .hero-img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-sub { max-width: 100%; font-size: 0.92rem; }
+  .hero-actions { justify-content: center; flex-wrap: wrap; gap: 1rem; }
+  .scroll-cue { display: none; }
 
   /* STRIP */
   .strip {
-    gap: 1.2rem;
+    gap: 1rem;
     flex-wrap: wrap;
     padding: 0.8rem 1rem;
     justify-content: center;
   }
+  .strip-item { font-size: 0.65rem; }
 
   /* PRODUCT DETAIL */
   .detail-section {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 0;
+    padding: 0;
+  }
+  .detail-visual {
+    order: 1;
+    width: 100%;
+  }
+  .detail-visual .detail-img {
+    width: 100%;
+    max-width: 100%;
+    height: 70vw;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .detail-text {
+    order: 2;
     padding: 2rem 1.5rem;
   }
-  .detail-visual { order: 2; }
-  .detail-visual .detail-img { max-width: 380px; }
-  .detail-text { order: 1; }
 
   /* QUANTITY */
   .qty-container { gap: 1rem; }
@@ -688,10 +714,10 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   .ingredients-grid { grid-template-columns: 1fr; gap: 1px; }
   .ingredient-card { padding: 2rem 1.5rem; }
 
-  /* VIDEO */
-  .video-section {
-    padding: 3rem 1.5rem;
-  }
+  /* VIDEO / RESULTS */
+  .video-section { padding: 3rem 1.5rem; }
+  .results-grid { grid-template-columns: repeat(2, 1fr); }
+  .result-card { padding: 1.5rem 1rem; }
 
   /* BENEFITS */
   .benefits-section { padding: 3rem 1.5rem; }
@@ -716,21 +742,26 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   .modal { padding: 2rem 1.5rem; }
 }
 
+/* ── RESPONSIVE: SMALL PHONES ── */
 @media (max-width: 480px) {
-  h1 { font-size: 2.4rem; }
-  h2 { font-size: 1.8rem; margin-bottom: 1.5rem; }
-  .hero-text { padding: 2rem 1.2rem 1rem; }
-  .hero-visual { padding: 1rem; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.75rem; margin-bottom: 1.5rem; }
+  .hero { grid-template-rows: 60vw auto; }
+  .hero-visual { min-height: 60vw; max-height: 60vw; }
+  .hero-text { padding: 2rem 1.2rem 1.5rem; }
   .btn-primary { padding: 0.9rem 1.8rem; font-size: 0.78rem; }
   .strip { gap: 0.8rem; }
-  .strip-item { font-size: 0.62rem; }
+  .strip-item { font-size: 0.6rem; }
   .section { padding: 2.5rem 1.2rem; }
   .benefits-section { padding: 2.5rem 1.2rem; }
-  .detail-section { padding: 2.5rem 1.2rem; }
   .cta-section { padding: 3rem 1.2rem; }
   footer { padding: 1.5rem 1.2rem; }
   .modal { padding: 1.5rem 1.2rem; }
   .qty-selector { height: 48px; }
   .qty-btn { width: 44px; height: 44px; font-size: 1.1rem; }
   .qty-input { width: 44px; font-size: 1.1rem; }
+  .result-card { padding: 1.2rem 0.8rem; }
+  .result-number { font-size: 2.4rem; }
+  .detail-visual .detail-img { height: 80vw; }
+  .detail-text { padding: 1.5rem 1.2rem; }
 }
