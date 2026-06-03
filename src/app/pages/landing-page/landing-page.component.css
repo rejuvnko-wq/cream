@@ -733,7 +733,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     display: none;
   }
   .hero-text h1 {
-    font-size: clamp(1.05rem, 3.8vw, 2.2rem);
+    font-size: clamp(0.95rem, 3.5vw, 2.2rem);
     line-height: 1.2;
     margin-bottom: 0.2rem;
     text-align: left;
@@ -742,7 +742,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     max-width: 100%;
     margin-bottom: 0.4rem;
     color: rgba(255, 255, 255, 0.8);
-    font-size: clamp(0.68rem, 2.2vw, 0.85rem);
+    font-size: clamp(0.6rem, 2vw, 0.85rem);
     line-height: 1.35;
     text-align: left;
   }
@@ -752,12 +752,14 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     flex-wrap: nowrap;
   }
   .hero-text .btn-primary {
-    padding: 0 0.4rem !important;
+    padding: 0.12rem 0.4rem !important;
     font-size: clamp(0.48rem, 1.5vw, 0.72rem) !important;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
     min-width: unset !important;
+    min-height: unset !important;
+    height: auto !important;
     line-height: 1 !important;
   }
   .hero-price {
