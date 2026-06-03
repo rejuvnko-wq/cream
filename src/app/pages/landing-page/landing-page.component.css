@@ -752,12 +752,13 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     flex-wrap: nowrap;
   }
   .hero-text .btn-primary {
-    padding: 0.18rem 0.5rem !important;
+    padding: 0.08rem 0.4rem !important;
     font-size: clamp(0.48rem, 1.5vw, 0.72rem) !important;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
     min-width: unset !important;
+    line-height: 1 !important;
   }
   .hero-price {
     font-size: clamp(0.65rem, 2.2vw, 1.2rem);
