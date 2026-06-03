@@ -757,6 +757,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
+    min-width: unset !important;
   }
   .hero-price {
     font-size: clamp(0.65rem, 2.2vw, 1.2rem);
