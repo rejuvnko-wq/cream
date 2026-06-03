@@ -793,95 +793,13 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
 
   /* PRODUCT DETAIL */
   .detail-section {
-    grid-template-columns: 1fr 1.1fr;
-    gap: 0.8rem;
-    padding: 2rem 0.5rem;
-    align-items: start;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
   }
-  .detail-visual { 
-    order: 1; 
-    width: 100%;
-  }
-  .detail-visual .detail-img { 
-    max-width: 100%; 
-    height: auto; 
-    aspect-ratio: 3/4.2; 
-    object-fit: cover;
-  }
-  .detail-badge-row {
-    gap: 0.3rem;
-  }
-  .detail-badge-row .badge {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.52rem;
-    letter-spacing: 0.05em;
-  }
-  .detail-text { 
-    order: 2; 
-    width: 100%;
-  }
-  .detail-text h2 {
-    font-size: clamp(1.1rem, 3.2vw, 2rem);
-    margin-bottom: 0.8rem;
-    line-height: 1.2;
-  }
-  .detail-text p {
-    font-size: clamp(0.72rem, 1.8vw, 0.88rem);
-    line-height: 1.45;
-  }
-  .spec-table {
-    margin: 1rem 0 !important;
-  }
-  .spec-row {
-    padding: 0.4rem 0;
-    font-size: clamp(0.65rem, 1.6vw, 0.8rem);
-  }
-  .spec-row .value {
-    font-size: clamp(0.65rem, 1.6vw, 0.8rem);
-  }
-  
-  /* Form inside detail text */
-  .detail-text form {
-    margin-top: 1rem !important;
-    gap: 0.6rem !important;
-  }
-  .detail-text .form-group label {
-    font-size: 0.6rem !important;
-    margin-bottom: 0.2rem !important;
-  }
-  .detail-text .form-group input {
-    padding: 0.45rem 0.6rem;
-    font-size: 0.78rem;
-    border-radius: 4px;
-  }
-  .detail-text .qty-container {
-    gap: 0.6rem;
-    flex-wrap: wrap;
-  }
-  .qty-selector {
-    height: 38px;
-  }
-  .qty-btn {
-    width: 38px;
-    height: 38px;
-    font-size: 0.95rem;
-  }
-  .qty-input {
-    width: 30px;
-    font-size: 0.95rem;
-  }
-  .qty-price-label span {
-    font-size: 0.6rem;
-  }
-  .qty-price-label strong {
-    font-size: 1.1rem;
-  }
-  .detail-text .btn-primary {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.72rem;
-    min-height: unset !important;
-    height: auto !important;
-  }
+  .detail-visual { order: 2; }
+  .detail-visual .detail-img { max-width: 380px; }
+  .detail-text { order: 1; }
 
   /* QUANTITY */
   .qty-container { gap: 1rem; }
@@ -949,7 +867,11 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   }
   .section { padding: 2.5rem 1.2rem; }
   .benefits-section { padding: 2.5rem 1.2rem; }
+  .detail-section { padding: 2.5rem 1.2rem; }
   .cta-section { padding: 3rem 1.2rem; }
   footer { padding: 1.5rem 1.2rem; }
   .modal { padding: 1.5rem 1.2rem; }
+  .qty-selector { height: 48px; }
+  .qty-btn { width: 44px; height: 44px; font-size: 1.1rem; }
+  .qty-input { width: 44px; font-size: 1.1rem; }
 }
