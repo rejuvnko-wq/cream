@@ -674,8 +674,8 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
 
   /* HERO */
   .hero {
-    min-height: unset !important;
-    height: auto !important;
+    min-height: 300px !important;
+    height: 300px !important;
     display: block !important;
     position: relative;
     background: #140c08;
@@ -688,12 +688,12 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     overflow: hidden;
   }
   .hero-img {
-    position: relative;
-    top: auto;
-    left: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
     z-index: 0;
   }
   .hero-overlay {
