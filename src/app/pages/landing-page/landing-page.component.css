@@ -128,7 +128,7 @@ h1 {
 }
 h1 em { color: var(--sky-mid); font-style: italic; }
 .hero-sub {
-  font-size: 1rem; color: var(--text-mid);
+  font-size: 1.3rem; color: var(--text-mid);
   max-width: 38ch; margin-bottom: 2.5rem;
   line-height: 1.8;
 }
@@ -771,7 +771,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     max-width: 100%;
     margin-bottom: 0.8rem;
     color: var(--text-mid);
-    font-size: clamp(0.6rem, 2vw, 0.85rem);
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
     line-height: 1.35;
     text-align: left;
   }
