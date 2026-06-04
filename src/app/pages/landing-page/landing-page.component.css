@@ -735,12 +735,12 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   .hero-text h1 {
     font-size: clamp(0.95rem, 3.5vw, 2.2rem);
     line-height: 1.2;
-    margin-bottom: 0.05rem;
+    margin-bottom: 0.6rem;
     text-align: left;
   }
   .hero-sub {
     max-width: 100%;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.8rem;
     color: var(--text-mid);
     font-size: clamp(0.6rem, 2vw, 0.85rem);
     line-height: 1.35;
