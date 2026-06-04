@@ -137,6 +137,10 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
   // Modal actions
   openModal(): void {
     this.isModalOpen = true;
+    this.showSuccess = false;
+    this.alreadyRegistered.set(false);
+    this.emailTouched = false;
+    this.email = '';
     document.body.style.overflow = 'hidden';
   }
 
@@ -184,10 +188,6 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
       const el = document.getElementById('prodotto');
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => {
-          const input = document.getElementById('email') as HTMLInputElement;
-          if (input) input.focus();
-        }, 800);
       }
     }
   }

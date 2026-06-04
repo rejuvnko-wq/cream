@@ -95,13 +95,8 @@
         <span class="value" style="color:var(--terracotta); font-family:'Cormorant Garamond',serif; font-size:1.2rem;">€34.90</span>
       </div>
     </div>
-    <form (ngSubmit)="submitWaitlist()" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-      <div class="form-group" style="margin-bottom: 0;">
-        <label for="email" style="font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.35rem;">Email Address</label>
-        <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="you@example.com" [class.input-invalid]="emailTouched && !isEmailValid">
-      </div>
-
-      <!-- Quantity Selector & Price -->
+    <!-- Quantity Selector & Price -->
+    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
       <div class="form-group" style="margin-bottom: 0;">
         <label style="font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.35rem;">Quantity (units)</label>
         <div class="qty-container" style="margin: 0.25rem 0 0 0;">
@@ -114,15 +109,15 @@
           </div>
           <div class="qty-price-label">
             <span>Total Price:</span>
-            <strong>{{ (quantity * 34.90).toFixed(2).replace('.', ',') }} €</strong>
+            <strong style="color: #8B5E3C;">{{ (quantity * 34.90).toFixed(2).replace('.', ',') }} €</strong>
           </div>
         </div>
       </div>
 
-      <button type="submit" class="btn-primary" [disabled]="isSubmitting" style="margin-top: 0.5rem; width: 100%; text-align: center;">
-        {{ isSubmitting ? 'Joining...' : 'AQUISTA ORA' }}
+      <button type="button" class="btn-primary" (click)="openModal()" style="margin-top: 0.5rem; width: 100%; text-align: center;">
+        ACQUISTA ORA
       </button>
-    </form>
+    </div>
   </div>
 </section>
 
@@ -201,34 +196,59 @@
   <p>© 2026 REJUVN Beauty · PDRN Renewal Cream · Made with Korean Biotech</p>
 </footer>
 
-<!-- MODAL (OUT OF STOCK / WAITLIST MERGED) -->
+<!-- MODAL -->
 <div class="modal-overlay" [class.open]="isModalOpen" (click)="closeModal($event)">
   <div class="modal" (click)="$event.stopPropagation()">
     <button class="modal-close" (click)="closeModal($event)">&times;</button>
-    
-    <div style="text-align: center;">
-      <!-- Queue Card -->
-      <div style="border: 1px solid rgba(184, 115, 85, 0.2); padding: 0.9rem 1.2rem; margin: 1rem auto 1.5rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 0.8rem; font-size: 0.85rem; background: var(--beige-warm); max-width: 320px;">
-        <span style="width: 6px; height: 6px; background-color: var(--terracotta); border-radius: 50%; display: inline-block; flex-shrink: 0;"></span>
-        <div style="font-family: var(--font-sans); line-height: 1;">
-          <strong style="color: var(--text-dark); font-weight: 600; font-size: 1rem; margin-right: 0.25rem;">{{ waitlistCount() }}</strong>
-          <span style="color: var(--text-mid);">persone in coda d'attesa</span>
+
+    @if (showSuccess) {
+      <!-- SUCCESS STATE -->
+      <div style="text-align: center; padding: 1rem 0;">
+        <div style="background: var(--sky-light); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1.2rem;">✓</div>
+        <h3 style="margin-bottom: 0.5rem;">Registrazione completata!</h3>
+        <p style="font-size: 0.9rem; color: var(--text-mid);">Hai riservato con successo {{ quantity }} flacone/i di REJUVN PDRN Cream.<br>Ti invieremo un'email non appena il tuo lotto sarà pronto per la spedizione.</p>
+        <!-- Waitlist count -->
+        <div style="border: 1px solid rgba(184,115,85,0.2); padding: 0.8rem 1.2rem; margin: 1.2rem auto 0; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 0.7rem; font-size: 0.85rem; background: var(--beige-warm); max-width: 300px;">
+          <span style="width:6px;height:6px;background:var(--terracotta);border-radius:50%;display:inline-block;"></span>
+          <span><strong style="color:var(--text-dark);">{{ waitlistCount() }}</strong> <span style="color:var(--text-mid);">persone in coda d'attesa</span></span>
         </div>
       </div>
+    } @else if (alreadyRegistered()) {
+      <!-- ALREADY REGISTERED STATE -->
+      <div style="text-align: center; padding: 1rem 0;">
+        <div style="background:#fff8e6; border:1px solid rgba(184,115,85,0.3); width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.8rem; color:var(--terracotta); margin:0 auto 1.2rem;">!</div>
+        <h3 style="margin-bottom: 0.5rem;">Già registrato!</h3>
+        <p style="font-size: 0.9rem; color: var(--text-mid);">Questo indirizzo email è già presente nella nostra lista d'attesa.<br>Ti avviseremo non appena il prodotto sarà disponibile.</p>
+        <div style="border: 1px solid rgba(184,115,85,0.2); padding: 0.8rem 1.2rem; margin: 1.2rem auto 0; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 0.7rem; font-size: 0.85rem; background: var(--beige-warm); max-width: 300px;">
+          <span style="width:6px;height:6px;background:var(--terracotta);border-radius:50%;display:inline-block;"></span>
+          <span><strong style="color:var(--text-dark);">{{ waitlistCount() }}</strong> <span style="color:var(--text-mid);">persone in coda d'attesa</span></span>
+        </div>
+      </div>
+    } @else {
+      <!-- EMAIL ENTRY STATE -->
+      <div style="text-align: center;">
+        <h3 style="margin-bottom: 0.3rem;">Prenota il tuo flacone</h3>
+        <p style="font-size: 0.85rem; color: var(--text-mid); margin-bottom: 1.2rem;">Inserisci la tua email per riservare {{ quantity }} flacone/i — ti avvisiamo non appena disponibile.</p>
 
-      @if (showSuccess) {
-        <div class="modal-success" class="visible">
-          <div class="check" style="background: var(--sky-light); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1rem;">✓</div>
-          <h3>Registrazione completata!</h3>
-          <p style="margin-top:0.5rem; font-size: 0.9rem; color: var(--text-mid);">Hai riservato con successo {{ quantity }} flacone/i di REJUVN PDRN Cream. Ti invieremo un'email non appena il tuo lotto sarà pronto per la spedizione.</p>
+        <!-- Waitlist count badge -->
+        <div style="border: 1px solid rgba(184,115,85,0.2); padding: 0.8rem 1.2rem; margin: 0 auto 1.4rem; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 0.7rem; font-size: 0.85rem; background: var(--beige-warm); max-width: 300px;">
+          <span style="width:6px;height:6px;background:var(--terracotta);border-radius:50%;display:inline-block;flex-shrink:0;"></span>
+          <span><strong style="color:var(--text-dark);">{{ waitlistCount() }}</strong> <span style="color:var(--text-mid);">persone in coda d'attesa</span></span>
         </div>
-      } @else if (alreadyRegistered()) {
-        <div>
-          <div class="check" style="background: #fff8e6; border: 1px solid rgba(184, 115, 85, 0.3); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--terracotta); margin: 0 auto 1rem;">!</div>
-          <h3>Già registrato!</h3>
-          <p style="margin-top:0.5rem; font-size: 0.9rem; color: var(--text-mid);">Questo indirizzo email è già presente nella nostra lista d'attesa. Ti avviseremo non appena il prodotto sarà disponibile.</p>
-        </div>
-      }
-    </div>
+
+        <form (ngSubmit)="submitWaitlist()" style="display:flex; flex-direction:column; gap:0.85rem; text-align:left;">
+          <div class="form-group" style="margin-bottom:0;">
+            <label for="modal-email" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-light); margin-bottom:0.35rem; display:block;">Email Address</label>
+            <input type="email" id="modal-email" name="email" [(ngModel)]="email" placeholder="you@example.com" [class.input-invalid]="emailTouched && !isEmailValid" style="width:100%;">
+            @if (emailTouched && !isEmailValid) {
+              <span style="font-size:0.75rem; color:#c0392b; margin-top:0.25rem; display:block;">Inserisci un'email valida.</span>
+            }
+          </div>
+          <button type="submit" class="btn-primary" [disabled]="isSubmitting" style="width:100%; text-align:center; margin-top:0.25rem;">
+            {{ isSubmitting ? 'Invio in corso...' : 'CONFERMA PRENOTAZIONE' }}
+          </button>
+        </form>
+      </div>
+    }
   </div>
 </div>
