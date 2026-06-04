@@ -128,7 +128,10 @@ h1 {
 }
 h1 em { color: var(--sky-mid); font-style: italic; }
 .hero-sub {
-  font-size: 1.3rem; color: var(--text-mid);
+  font-family: var(--font-serif);
+  font-weight: bold;
+  font-size: 1.4rem; 
+  color: var(--text-dark);
   max-width: 38ch; margin-bottom: 2.5rem;
   line-height: 1.8;
 }
@@ -762,16 +765,16 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     display: none;
   }
   .hero-text h1 {
-    font-size: clamp(0.95rem, 3.5vw, 2.2rem);
-    line-height: 1.2;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    line-height: 1.1;
     margin-bottom: 0.6rem;
     text-align: left;
   }
   .hero-sub {
     max-width: 100%;
     margin-bottom: 0.8rem;
-    color: var(--text-mid);
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    color: var(--text-dark);
+    font-size: 1rem;
     line-height: 1.35;
     text-align: left;
   }
