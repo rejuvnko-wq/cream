@@ -35,7 +35,7 @@ body {
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0.8rem 3rem;
+  padding: 1.2rem 3rem;
   background: rgba(253,251,248,0.88);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(184,115,85,0.12);
@@ -111,23 +111,23 @@ nav {
 }
 .hero-kicker {
   font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
-  color: rgba(255,255,255,0.75); margin-bottom: 1.5rem;
+  color: var(--text-mid); margin-bottom: 1.5rem;
   display: flex; align-items: center; gap: 0.8rem;
 }
 .hero-kicker::before {
-  content: ''; width: 2rem; height: 1px; background: rgba(255,255,255,0.5);
+  content: ''; width: 2rem; height: 1px; background: var(--text-mid);
 }
 h1 {
   font-family: var(--font-serif);
   font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 300;
   line-height: 1.1;
-  color: #fff;
+  color: var(--text-dark);
   margin-bottom: 1.5rem;
 }
 h1 em { color: var(--sky-mid); font-style: italic; }
 .hero-sub {
-  font-size: 1rem; color: rgba(255,255,255,0.75);
+  font-size: 1rem; color: var(--text-mid);
   max-width: 38ch; margin-bottom: 2.5rem;
   line-height: 1.8;
 }
@@ -148,11 +148,11 @@ h1 em { color: var(--sky-mid); font-style: italic; }
 }
 .hero-price {
   font-family: var(--font-serif);
-  font-size: 1.4rem; color: #fff;
+  font-size: 1.4rem; color: var(--text-dark);
 }
 .hero-price small {
   font-family: var(--font-sans);
-  font-size: 0.75rem; color: rgba(255,255,255,0.6);
+  font-size: 0.75rem; color: var(--text-light);
   display: block; letter-spacing: 0.1em;
 }
 
@@ -667,7 +667,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
 
 /* ── RESPONSIVE BREAKPOINTS ── */
 @media (max-width: 900px) {
-  nav { padding: 0.6rem 1.5rem; }
+  nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
@@ -741,7 +741,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   .hero-sub {
     max-width: 100%;
     margin-bottom: 0.1rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-mid);
     font-size: clamp(0.6rem, 2vw, 0.85rem);
     line-height: 1.35;
     text-align: left;
