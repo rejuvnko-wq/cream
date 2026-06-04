@@ -873,11 +873,12 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   .cta-actions { flex-direction: column; align-items: center; gap: 0.8rem; }
   .btn-white, .btn-outline {
     width: auto;
-    padding: 0.25rem 0.8rem;
-    font-size: 0.65rem;
+    padding: 0.8rem 2rem;
+    font-size: 0.8rem;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
+    cursor: pointer;
   }
 
   /* FOOTER */
