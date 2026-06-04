@@ -774,7 +774,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     max-width: 100%;
     margin-bottom: 0.8rem;
     color: var(--text-dark);
-    font-size: 0.85rem;
+    font-size: 0.65rem;
     line-height: 1.35;
     text-align: left;
   }
@@ -784,8 +784,8 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     flex-wrap: nowrap;
   }
   .hero-text .btn-primary {
-    padding: 0.8rem 1.6rem !important;
-    font-size: 0.9rem !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.75rem !important;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
