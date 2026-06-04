@@ -794,12 +794,28 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   /* PRODUCT DETAIL */
   .detail-section {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem 1.5rem;
+    gap: 2.5rem;
+    padding: 3rem 1.5rem;
   }
-  .detail-visual { order: 2; }
-  .detail-visual .detail-img { max-width: 380px; }
-  .detail-text { order: 1; }
+  .detail-visual {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .detail-visual .detail-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 450px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 12px 28px rgba(44, 32, 26, 0.08);
+  }
+  .detail-text {
+    order: 2;
+  }
 
   /* QUANTITY */
   .qty-container { gap: 1rem; }
