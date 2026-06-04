@@ -784,8 +784,8 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     flex-wrap: nowrap;
   }
   .hero-text .btn-primary {
-    padding: 0.5rem 1rem !important;
-    font-size: 0.75rem !important;
+    padding: 0.35rem 0.8rem !important;
+    font-size: 0.6rem !important;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
