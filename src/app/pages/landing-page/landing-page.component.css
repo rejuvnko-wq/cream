@@ -705,8 +705,8 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     height: auto !important;
     display: block !important;
     position: relative;
-    background: #140c08;
-    padding-top: 60px;
+    background: var(--white);
+    padding-top: 42px;
     width: 100vw;
     left: 50%;
     right: 50%;
