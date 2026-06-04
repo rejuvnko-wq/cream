@@ -35,7 +35,7 @@ body {
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 1.2rem 3rem;
+  padding: 0.8rem 3rem;
   background: rgba(253,251,248,0.88);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(184,115,85,0.12);
@@ -667,7 +667,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
 
 /* ── RESPONSIVE BREAKPOINTS ── */
 @media (max-width: 900px) {
-  nav { padding: 1rem 1.5rem; }
+  nav { padding: 0.6rem 1.5rem; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
