@@ -290,6 +290,33 @@ h2 em { font-style: italic; color: var(--sky-deep); }
   color: var(--text-light); text-align: center;
 }
 
+/* RESULTS GRID */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.result-card {
+  background: var(--sky-light);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.result-number {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--terracotta);
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.result-label {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
 /* BENEFITS */
 .benefits-section {
   padding: 7rem 6rem;
@@ -667,7 +694,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
 
 /* ── RESPONSIVE BREAKPOINTS ── */
 @media (max-width: 900px) {
-  nav { padding: 1rem 1.5rem; }
+  nav { padding: 0.5rem 1.2rem; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
@@ -814,6 +841,20 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   /* VIDEO */
   .video-section {
     padding: 3rem 1.5rem;
+  }
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+  .result-card {
+    padding: 1.8rem 1.2rem;
+    border-radius: 10px;
+  }
+  .result-number {
+    font-size: 2.4rem;
+  }
+  .result-label {
+    font-size: 0.78rem;
   }
 
   /* BENEFITS */
