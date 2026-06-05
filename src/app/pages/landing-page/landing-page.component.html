@@ -17,7 +17,7 @@
   <a href="javascript:void(0)" (click)="scrollToSection('prodotto'); $event.stopPropagation()">Product</a>
   <a href="javascript:void(0)" (click)="scrollToSection('ingredienti'); $event.stopPropagation()">Ingredients</a>
   <a href="javascript:void(0)" (click)="scrollToSection('scienza'); $event.stopPropagation()">Science</a>
-  <button class="nav-mobile-cta" (click)="scrollToSection('qty-section'); $event.stopPropagation()">Acquista ora — €34.90</button>
+  <button class="nav-mobile-cta" (click)="scrollToSection('skin-type-row'); $event.stopPropagation()">Acquista ora — €34.90</button>
 </div>
 
 <!-- HERO -->
@@ -37,7 +37,7 @@
       <span style="font-size: 1.2em;"><span style="color: var(--terracotta);">PDRN</span> CREAM</span>
     </p>
     <div class="hero-actions">
-      <button class="btn-primary" (click)="scrollToSection('qty-section')">ACQUISTA ORA</button>
+      <button class="btn-primary" (click)="scrollToSection('skin-type-row')">ACQUISTA ORA</button>
     </div>
   </div>
 
@@ -82,7 +82,7 @@
         <span class="label">Format</span>
         <span class="value">30 ml tube</span>
       </div>
-      <div class="spec-row">
+      <div class="spec-row" id="skin-type-row">
         <span class="label">Skin type</span>
         <span class="value">All types</span>
       </div>
@@ -186,7 +186,7 @@
     <span class="cta-price">34,90€</span>
   </div>
   <div class="cta-actions">
-    <button class="btn-white" (click)="scrollToSection('qty-section')" style="cursor:pointer; position:relative; z-index:10;">ACQUISTA ORA</button>
+    <button class="btn-white" (click)="scrollToSection('skin-type-row')" style="cursor:pointer; position:relative; z-index:10;">ACQUISTA ORA</button>
   </div>
 </section>
 
@@ -227,8 +227,8 @@
     } @else {
       <!-- EMAIL ENTRY STATE -->
       <div style="text-align: center;">
-        <h3 style="margin-bottom: 0.3rem;">Prenota il tuo flacone</h3>
-        <p style="font-size: 0.85rem; color: var(--text-mid); margin-bottom: 1.2rem;">Inserisci la tua email per riservare {{ quantity }} flacone/i — ti avvisiamo non appena disponibile.</p>
+        <h3 style="margin-bottom: 0.3rem;">Ci dispiace!</h3>
+        <p style="font-size: 0.85rem; color: var(--text-mid); margin-bottom: 1.2rem;">REJUVN Cream è temporaneamente esaurita.<br>Lascia la tua email, ti avviseremo appena torna in stock!</p>
 
         <!-- Waitlist count badge -->
         <div style="border: 1px solid rgba(184,115,85,0.2); padding: 0.8rem 1.2rem; margin: 0 auto 1.4rem; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 0.7rem; font-size: 0.85rem; background: var(--beige-warm); max-width: 300px;">
