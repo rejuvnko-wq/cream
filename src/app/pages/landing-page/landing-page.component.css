@@ -492,7 +492,7 @@ h2 em { font-style: italic; color: var(--sky-deep); }
   display: flex;
   width: max-content;
   margin-top: 1rem;
-  animation: reviews-scroll 60s linear infinite;
+  animation: reviews-scroll 55s linear infinite;
 }
 @keyframes reviews-scroll {
   0% { transform: translateX(0); }
@@ -765,6 +765,18 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   justify-content: center;
   gap: 2.5rem;
 }
+.nav-mobile-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+}
 .nav-mobile-menu.open { display: flex; }
 .nav-mobile-menu a,
 .nav-mobile-menu button {
@@ -1026,7 +1038,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   .reviews-section { padding: 3rem 1.2rem; overflow: hidden; }
   .reviews-stars-header { flex-direction: column; gap: 0.4rem; margin-bottom: 2rem; }
   .reviews-avg { font-size: 0.72rem; text-align: center; }
-  .reviews-grid { width: max-content; animation: reviews-scroll 60s linear infinite; }
+  .reviews-grid { width: max-content; animation: reviews-scroll 55s linear infinite; }
   .review-card { padding: 1.5rem 1.2rem; width: 85vw; box-sizing: border-box; margin-right: 1rem; }
   .review-text { font-size: 0.85rem; word-break: break-word; }
   footer { padding: 1.5rem 1.2rem; }
