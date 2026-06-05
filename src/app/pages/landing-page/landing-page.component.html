@@ -14,10 +14,10 @@
 
 <!-- MOBILE MENU OVERLAY -->
 <div class="nav-mobile-menu" [class.open]="isMobileMenuOpen" (click)="toggleMobileMenu()">
-  <a href="#prodotto" (click)="toggleMobileMenu()">Product</a>
-  <a href="#ingredienti" (click)="toggleMobileMenu()">Ingredients</a>
-  <a href="#scienza" (click)="toggleMobileMenu()">Science</a>
-  <button class="nav-mobile-cta" (click)="scrollToProduct(); toggleMobileMenu()">Acquista ora — €34.90</button>
+  <a href="javascript:void(0)" (click)="scrollToSection('prodotto'); $event.stopPropagation()">Product</a>
+  <a href="javascript:void(0)" (click)="scrollToSection('ingredienti'); $event.stopPropagation()">Ingredients</a>
+  <a href="javascript:void(0)" (click)="scrollToSection('scienza'); $event.stopPropagation()">Science</a>
+  <button class="nav-mobile-cta" (click)="scrollToSection('qty-section'); $event.stopPropagation()">Acquista ora — €34.90</button>
 </div>
 
 <!-- HERO -->
@@ -37,7 +37,7 @@
       <span style="font-size: 1.2em;"><span style="color: var(--terracotta);">PDRN</span> CREAM</span>
     </p>
     <div class="hero-actions">
-      <button class="btn-primary" (click)="scrollToProduct()">ACQUISTA ORA</button>
+      <button class="btn-primary" (click)="scrollToSection('qty-section')">ACQUISTA ORA</button>
     </div>
   </div>
 
@@ -96,7 +96,7 @@
       </div>
     </div>
     <!-- Quantity Selector & Price -->
-    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+    <div id="qty-section" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
       <div class="form-group" style="margin-bottom: 0;">
         <label style="font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.35rem;">Quantity (units)</label>
         <div class="qty-container" style="margin: 0.25rem 0 0 0;">
@@ -186,7 +186,7 @@
     <span class="cta-price">34,90€</span>
   </div>
   <div class="cta-actions">
-    <button class="btn-white" (click)="scrollToProduct()" style="cursor:pointer; position:relative; z-index:10;">ACQUISTA ORA</button>
+    <button class="btn-white" (click)="scrollToSection('qty-section')" style="cursor:pointer; position:relative; z-index:10;">ACQUISTA ORA</button>
   </div>
 </section>
 

@@ -184,14 +184,25 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
   }
 
   scrollToProduct(): void {
+    this.scrollToSection('prodotto');
+  }
+
+  scrollToSection(id: string): void {
+    // Close mobile menu first
+    this.isMobileMenuOpen = false;
+    document.body.style.overflow = '';
+
     if (isPlatformBrowser(this.platformId)) {
-      const el = document.getElementById('prodotto');
-      if (el) {
-        const nav = document.querySelector('nav') as HTMLElement;
-        const navHeight = nav ? nav.offsetHeight : 0;
-        const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
+      // Small delay so the overlay is gone before we measure positions
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          const nav = document.querySelector('nav') as HTMLElement;
+          const navHeight = nav ? nav.offsetHeight : 0;
+          const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      }, 50);
     }
   }
 
