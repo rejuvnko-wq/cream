@@ -767,15 +767,16 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
 }
 .nav-mobile-close {
   position: absolute;
-  top: 1rem;
-  right: 1.2rem;
+  top: 0.5rem;
+  right: 1rem;
   background: none;
   border: none;
-  font-size: 4rem;
+  font-size: 6rem;
+  font-weight: 300;
   color: var(--text-dark);
   cursor: pointer;
   padding: 0.5rem;
-  line-height: 1;
+  line-height: 0.8;
 }
 .nav-mobile-menu.open { display: flex; }
 .nav-mobile-menu a,
