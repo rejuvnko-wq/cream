@@ -772,7 +772,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     display: none;
   }
   .hero-text h1 {
-    font-size: clamp(1.8rem, 6vw, 2.6rem);
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
     line-height: 1.1;
     margin-bottom: 0.6rem;
     text-align: left;
@@ -781,7 +781,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     max-width: 100%;
     margin-bottom: 0.8rem;
     color: var(--text-mid);
-    font-size: clamp(1rem, 3.5vw, 1.3rem);
+    font-size: clamp(0.6rem, 2vw, 0.85rem);
     line-height: 1.35;
     text-align: left;
   }
