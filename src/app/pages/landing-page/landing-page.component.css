@@ -568,7 +568,6 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
 }
 .qty-btn:active {
   background: var(--beige-warm);
-  transform: scale(0.93);
 }
 .qty-divider {
   width: 1px;
