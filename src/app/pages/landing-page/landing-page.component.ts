@@ -184,7 +184,11 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
   }
 
   scrollToProduct(): void {
-    this.scrollToSection('prodotto');
+    if (isPlatformBrowser(this.platformId) && window.innerWidth <= 900) {
+      this.scrollToSection('prodotto-text');
+    } else {
+      this.scrollToSection('prodotto');
+    }
   }
 
   scrollToSection(id: string): void {
