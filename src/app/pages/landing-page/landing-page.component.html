@@ -17,7 +17,7 @@
   <a href="javascript:void(0)" (click)="scrollToSection('prodotto'); $event.stopPropagation()">Product</a>
   <a href="javascript:void(0)" (click)="scrollToSection('ingredienti'); $event.stopPropagation()">Ingredients</a>
   <a href="javascript:void(0)" (click)="scrollToSection('scienza'); $event.stopPropagation()">Science</a>
-  <button class="nav-mobile-cta" (click)="scrollToSection('format-row'); $event.stopPropagation()">Acquista ora — €34.90</button>
+  <button class="nav-mobile-cta" (click)="scrollToProduct(); $event.stopPropagation()">Acquista ora — €34.90</button>
 </div>
 
 <!-- HERO -->
@@ -37,7 +37,7 @@
       <span style="font-size: 1.2em;"><span style="color: var(--terracotta);">PDRN</span> CREAM</span>
     </p>
     <div class="hero-actions">
-      <button class="btn-primary" (click)="scrollToSection('format-row')">ACQUISTA ORA</button>
+      <button class="btn-primary" (click)="scrollToProduct()">ACQUISTA ORA</button>
     </div>
   </div>
 
@@ -167,7 +167,7 @@
         <p class="result-label">Idratazione prolungata certificata</p>
       </div>
       <div class="result-card">
-        <span class="result-number">9.000+</span>
+        <span class="result-number">9.000</span>
         <p class="result-label">Clienti soddisfatti in Europa</p>
       </div>
     </div>
@@ -186,7 +186,7 @@
     <span class="cta-price">34,90€</span>
   </div>
   <div class="cta-actions">
-    <button class="btn-white" (click)="scrollToSection('format-row')" style="cursor:pointer; position:relative; z-index:10;">ACQUISTA ORA</button>
+    <button class="btn-white" (click)="scrollToProduct()" style="cursor:pointer; position:relative; z-index:10;">ACQUISTA ORA</button>
   </div>
 </section>
 
