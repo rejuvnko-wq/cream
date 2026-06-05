@@ -101,20 +101,17 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
 
   readonly reviews = [
     {
-      name: 'Sofia M.',
-      location: 'Milano',
+      name: 'Junie.',
       stars: 5,
       text: '"Dopo sole due settimane, la mia pelle è visibilmente più luminosa e le rughe sottili si sono ridotte notevolmente. Un prodotto straordinario che non abbandonerò più."'
     },
     {
-      name: 'Giulia R.',
-      location: 'Roma',
+      name: 'Valeria.',
       stars: 4.5,
       text: '"Prodotto davvero ottimo, la texture è leggerissima e la pelle appare più luminosa già dopo pochi giorni. Aspetto ancora qualche settimana per vedere i risultati completi, ma sono già molto soddisfatta!"'
     },
     {
-      name: 'Valentina C.',
-      location: 'Firenze',
+      name: 'Iris.',
       stars: 5,
       text: '"Ho la pelle molto sensibile e questa è la prima crema che non mi ha dato alcuna irritazione. La elasticità è migliorata in modo evidente già al primo mese."'
     }
