@@ -561,13 +561,16 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   color: var(--terracotta);
   transition: background 0.2s ease, color 0.2s ease;
   flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
 }
 .qty-btn:hover {
   background: var(--beige);
   color: var(--terracotta-dark);
 }
 .qty-btn:active {
-  background: var(--beige-warm);
+  background: transparent;
 }
 .qty-divider {
   width: 1px;
