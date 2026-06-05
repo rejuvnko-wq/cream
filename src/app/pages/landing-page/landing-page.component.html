@@ -143,7 +143,7 @@
       <div class="ingredient-icon">✨</div>
       <h3>Niacinamide</h3>
       <div class="sub">Vitamina B3 · Uniformità del tono</div>
-      <p>La niacinamide al 5% riduce la produzione di melanina, uniforma le macchie cutanee e raffina i pori visibili. Agisce in sinergia con il PDRN per massimizzare la luminosità e rinforzare la barriera cutanea contro gli agenti esterni.</p>
+      <p>La niacinamide riduce la produzione di melanina, uniforma le macchie cutanee e raffina i pori visibili. Agisce in sinergia con il PDRN per massimizzare la luminosità e rinforzare la barriera cutanea contro gli agenti esterni.</p>
     </div>
   </div>
 </section>
@@ -186,6 +186,28 @@
   </div>
   <div class="cta-actions">
     <button class="btn-white" (click)="scrollToProduct()" style="cursor:pointer; position:relative; z-index:10;">ACQUISTA ORA</button>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  
+  <h2 style="text-align:center; margin-bottom:0.5rem;">Cosa dicono le nostre clienti</h2>
+  <div class="reviews-stars-header">
+    <span class="reviews-stars">★★★★★</span>
+    <span class="reviews-avg">4.7 / 5 &nbsp;·&nbsp; 9.000+ clienti soddisfatti</span>
+  </div>
+  <div class="reviews-grid">
+    @for (r of reviews; track r.name) {
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">{{ r.text }}</p>
+        <div class="review-author">
+          <span class="review-name">{{ r.name }}</span>
+          <span class="review-location">· {{ r.location }}</span>
+        </div>
+      </div>
+    }
   </div>
 </section>
 

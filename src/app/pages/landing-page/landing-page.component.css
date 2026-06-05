@@ -462,7 +462,82 @@ h2 em { font-style: italic; color: var(--sky-deep); }
 }
 .btn-outline:hover { border-color: white; }
 
+/* REVIEWS */
+.reviews-section {
+  background: var(--beige);
+  padding: 7rem 6rem;
+  text-align: center;
+}
+.reviews-stars-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3.5rem;
+}
+.reviews-stars {
+  color: var(--terracotta);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+}
+.reviews-avg {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.review-card {
+  background: var(--white);
+  border-radius: 4px;
+  padding: 2.5rem 2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  border: 1px solid rgba(184,115,85,0.1);
+  transition: box-shadow 0.3s ease;
+}
+.review-card:hover {
+  box-shadow: 0 8px 32px rgba(184,115,85,0.12);
+}
+.review-stars {
+  color: var(--terracotta);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+}
+.review-text {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.85;
+  font-style: italic;
+  flex: 1;
+}
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(184,115,85,0.1);
+}
+.review-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.05em;
+}
+.review-location {
+  font-size: 0.78rem;
+  color: var(--text-light);
+}
+
 /* FOOTER */
+
 footer {
   background: var(--white);
   padding: 3rem 6rem;
@@ -935,6 +1010,9 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   .benefits-section { padding: 2.5rem 1.2rem; }
   .detail-section { padding: 2.5rem 1.2rem; }
   .cta-section { padding: 3rem 1.2rem; }
+  .reviews-section { padding: 3rem 1.2rem; }
+  .reviews-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .review-card { padding: 1.8rem 1.5rem; }
   footer { padding: 1.5rem 1.2rem; }
   .modal { padding: 1.5rem 1.2rem; }
   .qty-selector { height: 48px; }
