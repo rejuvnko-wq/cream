@@ -33,8 +33,8 @@
       <span style="white-space: nowrap; color: var(--text-dark);">e radiosa</span>
     </h1>
     <p class="hero-sub">
-      <span style="color: #000;">Il segreto della</span> <span style="font-style: italic; color: #186f96;">skincare coreana</span><br>
-      <span style="font-size: 1.2em;"><span style="color: var(--terracotta);">PDRN</span> <span style="color: #000;">CREAM</span></span>
+      <span style="color: #000;">Il segreto della</span> <span style="font-style: italic; color: #186f96; margin-left: 0.25em;">skincare coreana</span><br>
+      <span style="font-size: 1.2em;"><span style="color: var(--terracotta);">PDRN</span> <span style="color: #000; margin-left: 0.25em;">CREAM</span></span>
     </p>
     <div class="hero-actions">
       <button class="btn-primary" (click)="scrollToProduct()">ACQUISTA ORA</button>
@@ -67,31 +67,31 @@
   </div>
   <div class="detail-text fade-in">
     <div class="section-label">Scheda prodotto</div>
-    <h2>PDRN <em>Renewal Cream</em><br><span style="font-size: 0.45em; line-height: 1.4; display: block; margin-top: 0.8rem; font-style: normal; color: var(--text-mid);">l'avanguardia della dermo-cosmesi coreana in un trattamento quotidiano.</span></h2>
+    <h2>PDRN <em>Renewal Cream</em><br><span style="font-size:0.95rem; color:var(--text-mid); line-height:1.9;">L’eccellenza della dermo-cosmesi coreana per la tua routine quotidiana.</span></h2>
     <p style="font-size:0.95rem; color:var(--text-mid); line-height:1.9;">Formulata secondo i più alti standard di innovazione, questa crema viso unisce un'elevata concentrazione di attivi biotecnologici a una texture straordinaria: ricca nel nutrimento, ma incredibilmente leggera sul viso. Si assorbe all'istante, rigenerando ogni tipo di pelle senza appesantire.</p>
     <div class="spec-table">
       <div class="spec-row">
-        <span class="label">Main active ingredient</span>
-        <span class="value">PDRN Complex</span>
+        <span class="label">Attivo principale</span>
+        <span class="value"> Complesso PDRN</span>
       </div>
       <div class="spec-row">
-        <span class="label">Co-active</span>
-        <span class="value">Hyaluronic Acid · Niacinamide 5%</span>
+        <span class="label">Attivi complementari</span>
+        <span class="value">Acido ialuronico · Niacinamide</span>
       </div>
       <div class="spec-row" id="format-row">
-        <span class="label">Format</span>
-        <span class="value">30 ml tube</span>
+        <span class="label">Formato</span>
+        <span class="value">30 ml</span>
       </div>
       <div class="spec-row" id="skin-type-row">
-        <span class="label">Skin type</span>
-        <span class="value">All types</span>
+        <span class="label">Tipologia di pelle</span>
+        <span class="value">Tutti i tipi di pelle</span>
       </div>
       <div class="spec-row">
-        <span class="label">Application</span>
-        <span class="value">Morning and evening</span>
+        <span class="label">Modalità d’uso</span>
+        <span class="value">Mattina e sera</span>
       </div>
       <div class="spec-row">
-        <span class="label">Price</span>
+        <span class="label">Prezzo</span>
         <span class="value" style="color:var(--terracotta); font-family:'Cormorant Garamond',serif; font-size:1.2rem;">€34.90</span>
       </div>
     </div>
@@ -108,7 +108,7 @@
             <button type="button" class="qty-btn" (click)="incQty()">+</button>
           </div>
           <div class="qty-price-label">
-            <span>Total Price:</span>
+            <span>Prezzo totale:</span>
             <strong style="color: #8B5E3C;">{{ (quantity * 34.90).toFixed(2).replace('.', ',') }} €</strong>
           </div>
         </div>
