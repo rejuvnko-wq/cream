@@ -14,7 +14,6 @@
 
 <!-- MOBILE MENU OVERLAY -->
 <div class="nav-mobile-menu" [class.open]="isMobileMenuOpen" (click)="toggleMobileMenu()">
-  <button class="nav-mobile-close" aria-label="Close menu">&times;</button>
   <a href="javascript:void(0)" (click)="scrollToSection('prodotto'); $event.stopPropagation()">Prodotto</a>
   <a href="javascript:void(0)" (click)="scrollToSection('ingredienti'); $event.stopPropagation()">Ingredienti</a>
   <a href="javascript:void(0)" (click)="scrollToSection('scienza'); $event.stopPropagation()">Scienza</a>
