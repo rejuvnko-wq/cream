@@ -187,7 +187,10 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
     if (isPlatformBrowser(this.platformId)) {
       const el = document.getElementById('prodotto');
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+        const nav = document.querySelector('nav') as HTMLElement;
+        const navHeight = nav ? nav.offsetHeight : 0;
+        const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+        window.scrollTo({ top, behavior: 'smooth' });
       }
     }
   }
