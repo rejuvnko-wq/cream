@@ -198,16 +198,30 @@
     <span class="reviews-avg">4.7 / 5 &nbsp;·&nbsp; 9.000+ clienti soddisfatti</span>
   </div>
   <div class="reviews-grid">
-    @for (r of reviews; track r.name) {
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">{{ r.text }}</p>
-        <div class="review-author">
-          <span class="review-name">{{ r.name }}</span>
-          <span class="review-location">· {{ r.location }}</span>
-        </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">{{ reviews[0].text }}</p>
+      <div class="review-author">
+        <span class="review-name">{{ reviews[0].name }}</span>
+        <span class="review-location">· {{ reviews[0].location }}</span>
       </div>
-    }
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★<span style="opacity:0.35;">★</span></div>
+      <p class="review-text">{{ reviews[1].text }}</p>
+      <div class="review-author">
+        <span class="review-name">{{ reviews[1].name }}</span>
+        <span class="review-location">· {{ reviews[1].location }}</span>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">{{ reviews[2].text }}</p>
+      <div class="review-author">
+        <span class="review-name">{{ reviews[2].name }}</span>
+        <span class="review-location">· {{ reviews[2].location }}</span>
+      </div>
+    </div>
   </div>
 </section>
 

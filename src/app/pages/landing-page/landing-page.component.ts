@@ -103,16 +103,19 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
     {
       name: 'Sofia M.',
       location: 'Milano',
+      stars: 5,
       text: '"Dopo sole due settimane, la mia pelle è visibilmente più luminosa e le rughe sottili si sono ridotte notevolmente. Un prodotto straordinario che non abbandonerò più."'
     },
     {
       name: 'Giulia R.',
       location: 'Roma',
+      stars: 4.5,
       text: '"La texture è leggerissima e si assorbe in pochi secondi. Non lascia nessun residuo grasso — perfetta anche sotto il trucco mattina e sera."'
     },
     {
       name: 'Valentina C.',
       location: 'Firenze',
+      stars: 5,
       text: '"Ho la pelle molto sensibile e questa è la prima crema che non mi ha dato alcuna irritazione. La elasticità è migliorata in modo evidente già al primo mese."'
     }
   ];
