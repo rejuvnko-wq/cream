@@ -86,6 +86,10 @@ nav {
   height: auto;
   display: block;
 }
+.hero picture {
+  display: block;
+  line-height: 0;
+}
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -304,7 +308,7 @@ h2 em { font-style: italic; color: var(--sky-deep); }
 }
 .result-number {
   font-family: var(--font-serif);
-  font-size: 2.8rem;
+  font-size: 4rem;
   font-weight: 300;
   color: var(--terracotta);
   display: block;
@@ -851,7 +855,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     border-radius: 10px;
   }
   .result-number {
-    font-size: 2.4rem;
+    font-size: 3.4rem;
   }
   .result-label {
     font-size: 0.78rem;
