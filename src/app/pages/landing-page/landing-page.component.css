@@ -302,7 +302,7 @@ h2 em { font-style: italic; color: var(--sky-deep); }
 }
 .result-card {
   background: var(--sky-light);
-  border-radius: 8px;
+  border-radius: 0;
   padding: 2rem 1.5rem;
   text-align: center;
 }
@@ -853,7 +853,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   }
   .result-card {
     padding: 1.8rem 1.2rem;
-    border-radius: 10px;
+    border-radius: 0;
   }
   .result-number {
     font-size: 3.8rem;
