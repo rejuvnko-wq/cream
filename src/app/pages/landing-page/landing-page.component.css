@@ -150,6 +150,14 @@ h1 em { color: var(--sky-mid); font-style: italic; }
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(184,115,85,0.3);
 }
+.hero-actions .btn-primary {
+  background: #000;
+  border-radius: 999px;
+}
+.hero-actions .btn-primary:hover {
+  background: #333;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
 .hero-price {
   font-family: var(--font-serif);
   font-size: 1.4rem; color: var(--text-dark);
@@ -741,7 +749,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   }
   .hero-text {
     position: absolute;
-    top: 61.5%;
+    top: 52%;
     left: 0;
     transform: translateY(-50%);
     z-index: 2;
