@@ -17,7 +17,7 @@
   <a href="javascript:void(0)" (click)="scrollToSection('prodotto'); $event.stopPropagation()">Product</a>
   <a href="javascript:void(0)" (click)="scrollToSection('ingredienti'); $event.stopPropagation()">Ingredients</a>
   <a href="javascript:void(0)" (click)="scrollToSection('scienza'); $event.stopPropagation()">Science</a>
-  <button class="nav-mobile-cta" (click)="scrollToSection('skin-type-row'); $event.stopPropagation()">Acquista ora — €34.90</button>
+  <button class="nav-mobile-cta" (click)="scrollToSection('format-row'); $event.stopPropagation()">Acquista ora — €34.90</button>
 </div>
 
 <!-- HERO -->
@@ -37,7 +37,7 @@
       <span style="font-size: 1.2em;"><span style="color: var(--terracotta);">PDRN</span> CREAM</span>
     </p>
     <div class="hero-actions">
-      <button class="btn-primary" (click)="scrollToSection('skin-type-row')">ACQUISTA ORA</button>
+      <button class="btn-primary" (click)="scrollToSection('format-row')">ACQUISTA ORA</button>
     </div>
   </div>
 
@@ -78,7 +78,7 @@
         <span class="label">Co-active</span>
         <span class="value">Hyaluronic Acid · Niacinamide 5%</span>
       </div>
-      <div class="spec-row">
+      <div class="spec-row" id="format-row">
         <span class="label">Format</span>
         <span class="value">30 ml tube</span>
       </div>
@@ -186,7 +186,7 @@
     <span class="cta-price">34,90€</span>
   </div>
   <div class="cta-actions">
-    <button class="btn-white" (click)="scrollToSection('skin-type-row')" style="cursor:pointer; position:relative; z-index:10;">ACQUISTA ORA</button>
+    <button class="btn-white" (click)="scrollToSection('format-row')" style="cursor:pointer; position:relative; z-index:10;">ACQUISTA ORA</button>
   </div>
 </section>
 
@@ -205,8 +205,8 @@
       <!-- SUCCESS STATE -->
       <div style="text-align: center; padding: 1rem 0;">
         <div style="background: var(--sky-light); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1.2rem;">✓</div>
-        <h3 style="margin-bottom: 0.5rem;">Registrazione completata!</h3>
-        <p style="font-size: 0.9rem; color: var(--text-mid);">Hai riservato con successo {{ quantity }} flacone/i di REJUVN PDRN Cream.<br>Ti invieremo un'email non appena il tuo lotto sarà pronto per la spedizione.</p>
+        <h3 style="margin-bottom: 0.5rem;">Iscrizione confermata!</h3>
+        <p style="font-size: 0.9rem; color: var(--text-mid);">La tua richiesta è confermata. Avrai accesso prioritario e sarai il primo a sapere quando la nostra crema REJUVN tornerà in stock.</p>
         <!-- Waitlist count -->
         <div style="border: 1px solid rgba(184,115,85,0.2); padding: 0.8rem 1.2rem; margin: 1.2rem auto 0; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 0.7rem; font-size: 0.85rem; background: var(--beige-warm); max-width: 300px;">
           <span style="width:6px;height:6px;background:var(--terracotta);border-radius:50%;display:inline-block;"></span>
