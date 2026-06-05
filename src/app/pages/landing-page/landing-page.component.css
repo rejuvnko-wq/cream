@@ -131,9 +131,10 @@ h1 {
 }
 h1 em { color: var(--sky-mid); font-style: italic; }
 .hero-sub {
-  font-size: 1rem; color: var(--text-mid);
+  font-family: var(--font-serif);
+  font-size: 1.2rem; color: var(--text-mid);
   max-width: 38ch; margin-bottom: 2.5rem;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 .hero-actions { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
 .btn-primary {
@@ -778,10 +779,11 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
     text-align: left;
   }
   .hero-sub {
+    font-family: var(--font-serif);
     max-width: 100%;
     margin-bottom: 0.8rem;
     color: var(--text-mid);
-    font-size: clamp(0.75rem, 2.5vw, 0.95rem);
+    font-size: clamp(0.75rem, 2.8vw, 1.05rem);
     line-height: 1.35;
     text-align: left;
   }
