@@ -771,7 +771,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   right: 1.2rem;
   background: none;
   border: none;
-  font-size: 2.5rem;
+  font-size: 4rem;
   color: var(--text-dark);
   cursor: pointer;
   padding: 0.5rem;
