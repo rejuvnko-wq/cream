@@ -734,26 +734,26 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
 .nav-hamburger {
   display: none;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 6px;
   z-index: 110;
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }
 .nav-hamburger span {
   display: block;
-  width: 36px;
-  height: 3px;
+  width: 28px;
+  height: 2px;
   background: var(--text-dark);
-  border-radius: 3px;
+  border-radius: 2px;
   transition: transform 0.3s, opacity 0.3s;
 }
-.nav-hamburger.open span:nth-child(1) { transform: translateY(11px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.nav-hamburger.open span:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 .nav-mobile-menu {
   display: none;
