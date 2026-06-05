@@ -2,9 +2,9 @@
 <nav>
   <a href="#" class="nav-logo">REJ<span>U</span>VN</a>
   <ul class="nav-links">
-    <li><a href="#prodotto">Product</a></li>
-    <li><a href="#ingredienti">Ingredients</a></li>
-    <li><a href="#scienza">Science</a></li>
+    <li><a href="#prodotto">Prodotto</a></li>
+    <li><a href="#ingredienti">Ingredienti</a></li>
+    <li><a href="#scienza">Scienza</a></li>
   </ul>
   <button class="nav-cta" (click)="scrollToProduct()">Acquista ora — €34.90</button>
   <button class="nav-hamburger" [class.open]="isMobileMenuOpen" (click)="toggleMobileMenu()" aria-label="Menu">
@@ -14,9 +14,9 @@
 
 <!-- MOBILE MENU OVERLAY -->
 <div class="nav-mobile-menu" [class.open]="isMobileMenuOpen" (click)="toggleMobileMenu()">
-  <a href="javascript:void(0)" (click)="scrollToSection('prodotto'); $event.stopPropagation()">Product</a>
-  <a href="javascript:void(0)" (click)="scrollToSection('ingredienti'); $event.stopPropagation()">Ingredients</a>
-  <a href="javascript:void(0)" (click)="scrollToSection('scienza'); $event.stopPropagation()">Science</a>
+  <a href="javascript:void(0)" (click)="scrollToSection('prodotto'); $event.stopPropagation()">Prodotto</a>
+  <a href="javascript:void(0)" (click)="scrollToSection('ingredienti'); $event.stopPropagation()">Ingredienti</a>
+  <a href="javascript:void(0)" (click)="scrollToSection('scienza'); $event.stopPropagation()">Scienza</a>
   <button class="nav-mobile-cta" (click)="scrollToProduct(); $event.stopPropagation()">Acquista ora — €34.90</button>
 </div>
 
