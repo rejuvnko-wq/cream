@@ -740,6 +740,8 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   cursor: pointer;
   padding: 8px;
   z-index: 110;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .nav-hamburger span {
   display: block;
@@ -750,7 +752,7 @@ footer p { font-size: 0.75rem; color: var(--text-light); }
   transition: transform 0.3s, opacity 0.3s;
 }
 .nav-hamburger.open span:nth-child(1) { transform: translateY(11px) rotate(45deg); }
-.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .nav-hamburger.open span:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
 
 .nav-mobile-menu {
