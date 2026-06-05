@@ -110,7 +110,7 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
       name: 'Giulia R.',
       location: 'Roma',
       stars: 4.5,
-      text: '"La texture è leggerissima e si assorbe in pochi secondi. Non lascia nessun residuo grasso — perfetta anche sotto il trucco mattina e sera."'
+      text: '"Prodotto davvero ottimo, la texture è leggerissima e la pelle appare più luminosa già dopo pochi giorni. Aspetto ancora qualche settimana per vedere i risultati completi, ma sono già molto soddisfatta!"'
     },
     {
       name: 'Valentina C.',
